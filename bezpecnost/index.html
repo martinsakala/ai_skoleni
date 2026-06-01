@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bezpečnost a právo při AI</title>
+
+  <!-- Reveal.js core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- 1. TITLE -->
+      <section id="title" class="section-divider" data-state="is-section-divider">
+        <h1>Bezpečnost a právo při AI</h1>
+        <p class="text-2xl"><span class="accent">Co smíte, co nesmíte a kdo za to ručí</span></p>
+        <p class="text-muted">Vzdělávací materiál · Bits2b</p>
+        <aside class="notes">Tahle část není o tom, jak vás strašit. Je o tom, abyste věděli přesně, kde je čára — co do AI klidně dáte a kde si naopak useknete prst. Ta čára existuje a většina lidí ji nezná, dokud ji nepřekročí.</aside>
+      </section>
+
+      <!-- 2. HOOK: free = you are the product -->
+      <section id="free-product">
+        <h2>Když je něco zadarmo, produkt jste vy</h2>
+        <div class="content">
+          <blockquote class="text-2xl">„Když za produkt neplatíte, produkt jste vy."</blockquote>
+          <p class="text-xl" style="margin-top:10px;">U AI to znamená: <strong>vaše konverzace netrénují vás — trénují příští model.</strong></p>
+          <div class="note" style="margin-top:auto;"><p style="margin:0;">Vaše dotazy „obohatí celosvětové vědění". Hezky řečeno. Prakticky: <strong>odešly z firmy</strong> a už je nevezmete zpátky.</p></div>
+        </div>
+        <aside class="notes">Než se bavíme o paragrafech, jedna věta: když za něco neplatíte, nejste zákazník — jste zboží. U AI zdarma to není abstrakce. Všechno, co tam napíšete, může posloužit k natrénování dalšího modelu. Vaše čísla, kalkulace, jméno zákazníka odešly z firmy. A teď dobrá zpráva — přesně proto firma platí za firemní účet. Tam tohle neplatí. POZOR: říkat „AI zdarma", ne „AI" obecně — placené Business/Enterprise netrénuje, free trénuje by default (lze vypnout).</aside>
+      </section>
+
+      <!-- 3. FRAMEWORK: three layers -->
+      <section id="framework">
+        <h2>Tři vrstvy rizika</h2>
+        <div class="content">
+          <p class="text-muted">Každé použití AI prochází třemi otázkami:</p>
+          <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:24px; margin-top:14px;">
+            <div class="card"><p><i class="fa-solid fa-arrow-right-to-bracket accent"></i> <strong>1. Vstup</strong><br>co dáš dovnitř</p></div>
+            <div class="card"><p><i class="fa-solid fa-circle-question accent"></i> <strong>2. Výstup</strong><br>můžeš tomu věřit?</p></div>
+            <div class="card"><p><i class="fa-solid fa-file-signature accent"></i> <strong>3. Odpovědnost</strong><br>kdo za to ručí</p></div>
+          </div>
+          <p class="text-lg" style="margin-top:auto;">Celý zbytek visí na téhle ose. Začneme tím nejnebezpečnějším — <strong>vstupem</strong>.</p>
+        </div>
+        <aside class="notes">Tři otázky. Za prvé — co tam vůbec můžu nahrát. Za druhé — můžu věřit tomu, co mi to vrátí. Za třetí — když to pustím ven a je v tom chyba, kdo to platí. Vezmeme je popořadě.</aside>
+      </section>
+
+      <!-- DIVIDER 1 -->
+      <section id="divider-input" class="section-divider" data-state="is-section-divider">
+        <h2 class="text-3xl">1 · Vstup</h2>
+        <p class="text-xl">Co dáš dovnitř</p>
+      </section>
+
+      <!-- 4. What never to put in -->
+      <section id="never-input">
+        <h2>Co nikdy nedávat do AI</h2>
+        <div class="content">
+          <div class="card stop">
+            <p class="text-lg"><i class="fa-solid fa-ban accent-red"></i> <strong>STOP — bez rozmyslu sem nepatří:</strong></p>
+            <ul>
+              <li>Osobní údaje (zákazníci, zaměstnanci)</li>
+              <li>Dokumentace pod NDA</li>
+              <li>Obchodní tajemství — kalkulace, know-how, výkresy</li>
+              <li>Přihlašovací údaje, přístupy</li>
+              <li>Cokoli z prostředí kritické infrastruktury</li>
+            </ul>
+          </div>
+          <p class="text-lg" style="margin-top:auto;">Jakmile to napíšete do okna, <strong>poslali jste to ven z firmy.</strong></p>
+        </div>
+        <aside class="notes">Tohle je seznam, který si vyfoťte. Ne proto, že by AI byla zlá — ale protože ve chvíli, kdy to napíšete do okna, jste to poslali ven z firmy. A teď přijde věc, kterou většina lidí splete: „vždyť máme placený ChatGPT, ten je bezpečný". Ano i ne. Pojďme na to přesně.</aside>
+      </section>
+
+      <!-- 5. Business: solves / doesn't solve -->
+      <section id="business">
+        <h2>Placený účet: co řeší a co NE</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:30px;">
+            <div class="card go">
+              <p><i class="fa-solid fa-check accent-green"></i> <strong>Řeší</strong></p>
+              <ul>
+                <li>Netrénuje na vašich datech</li>
+                <li>GDPR rámec (smlouva o zpracování)</li>
+                <li>Firemní správa účtů</li>
+              </ul>
+            </div>
+            <div class="card stop">
+              <p><i class="fa-solid fa-xmark accent-red"></i> <strong>NEřeší</strong></p>
+              <ul>
+                <li>NDA — poskytovatel je „třetí strana"</li>
+                <li>Obchodní tajemství — únik je únik</li>
+                <li>Pravdivost výstupu</li>
+                <li>Vaši odpovědnost</li>
+                <li>Data leží v USA, ~30 dní</li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-lg" style="margin-top:auto;">Kryje vás <strong>vůči poskytovateli</strong>, ne <strong>vůči zákazníkovi.</strong></p>
+        </div>
+        <aside class="notes">Nejdůležitější slajd. Placený firemní účet vyřeší jednu vrstvu: jak poskytovatel nakládá s daty. Netrénuje, je to podle GDPR, je na to smlouva. Velká věc. Ale nevyřeší druhou vrstvu: co jste slíbili zákazníkovi. Když máte NDA „nesdílíme s žádnou třetí stranou", poskytovatel AI JE ta třetí strana. Že je placená, na tom nic nemění. A data nezmizí, když zavřete okno — leží na serverech v USA zhruba měsíc. Business kryje vůči poskytovateli, ne vůči klientovi.</aside>
+      </section>
+
+      <!-- 6. Retention -->
+      <section id="retention">
+        <h2>Data nezmizí hned</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:30px; align-items:center;">
+            <div>
+              <p class="text-muted"><strong>Mýtus:</strong> „Co napíšu, po zavření okna zmizí."</p>
+              <p class="text-xl"><strong>Realita:</strong> i s placeným účtem data leží <span class="accent">~30 dní</span> (kontrola zneužití), pak se mažou.</p>
+            </div>
+            <div class="card warn">
+              <p style="margin:0;"><i class="fa-solid fa-server accent"></i> Po celou dobu jsou na serverech v <strong>USA</strong>, pod americkým právem.</p>
+            </div>
+          </div>
+          <div class="note stop" style="margin-top:auto;"><p style="margin:0;">→ S citlivými daty <strong>opatrně i na placeném účtu.</strong></p></div>
+        </div>
+        <aside class="notes">Krátký slajd, vyvrací rozšířený omyl. Lidi si myslí, že AI je průtokáč — napíšu, ono odpoví, zmizí. Není. I na placeném účtu se dotazy uchovávají zhruba 30 dní kvůli kontrole zneužití. A celou dobu leží na amerických serverech, pod americkým právem. Existuje režim, kde se neukládá nic (Zero Data Retention), ale ten se zvlášť zařizuje a běžně ho nemáte. Pro nás platí: i na placeném účtu s citlivými věcmi opatrně.</aside>
+      </section>
+
+      <!-- 7. NDA three interpretations -->
+      <section id="nda">
+        <h2>NDA a obchodní tajemství: kde je hranice</h2>
+        <div class="content">
+          <p class="text-muted">Je AI poskytovatel „třetí strana"? Tři pohledy:</p>
+          <div style="display:flex; flex-direction:column; gap:10px; margin-top:6px;">
+            <div class="card" style="border-left:6px solid #C0392B;"><p style="margin:0;"><strong>1. Striktní</strong> — kdokoli mimo firmu = porušení. <span class="text-muted">Neudržitelné — zakázalo by i Office a cloud.</span></p></div>
+            <div class="card good"><p style="margin:0;"><strong>2. Funkční (dnešní praxe)</strong> — zpracovatel pod smlouvou = jako jakýkoli cloud (Microsoft, Google).</p></div>
+            <div class="card" style="border-left:6px solid #2E6CA4;"><p style="margin:0;"><strong>3. Materiální</strong> — rozhoduje, jestli data zůstávají uložená.</p></div>
+          </div>
+          <div class="note stop" style="margin-top:14px;"><p style="margin:0;"><i class="fa-solid fa-triangle-exclamation accent-red"></i> <strong>Absolutní stop:</strong> utajované informace (zák. 412/2005 Sb.), jaderné a vládní zakázky → <strong>mimo AI úplně.</strong></p></div>
+        </div>
+        <aside class="notes">Otázka: je AI poskytovatel „třetí strana", které nesmím dát data pod NDA? Nejpřísnější pohled říká ano, kdokoli mimo firmu. Ten je k ničemu — zakázal by i Microsoft Office nebo Google, které používáte denně. Realistický pohled, dnes převažující: AI poskytovatel se smlouvou je stejný zpracovatel jako jiný cloud. Když firmě nevadí dokumenty na cloudu, není důvod dělat z AI strašáka. Ale jedna hranice je absolutní — utajované informace a zvláštní zakázky, jaderné nebo vládní. Tam je to ze zákona kategoricky zakázané, žádný účet to neobejde.</aside>
+      </section>
+
+      <!-- 8. Pub test -->
+      <section id="pub-test">
+        <h2>Praktické pravidlo</h2>
+        <div class="content text-center" style="justify-content:center;">
+          <blockquote class="text-3xl" style="border:none; text-align:center;">„Řekl bys to nahlas cizímu člověku v hospodě?"</blockquote>
+          <p class="text-2xl" style="margin-top:20px;">Ne? → <strong class="accent-red">Do AI to nepatří.</strong> Nebo to nejdřív <strong class="accent">anonymizuj.</strong></p>
+        </div>
+        <aside class="notes">Když si nebudete pamatovat žádný paragraf, pamatujte si tohle. Než něco vložíte do AI, představte si, že to říkáte nahlas cizímu chlapovi u vedlejšího stolu. Jméno zákazníka, číslo zakázky, kalkulaci. Kdyby vám to bylo nepříjemné — nedávejte to tam, nebo z toho nejdřív vyhoďte to, podle čeho se to dá poznat. Tomu se říká anonymizace a je to třísekundový návyk.</aside>
+      </section>
+
+      <!-- DIVIDER 2 -->
+      <section id="divider-output" class="section-divider" data-state="is-section-divider">
+        <h2 class="text-3xl">2 · Výstup</h2>
+        <p class="text-xl">Čemu věříš</p>
+      </section>
+
+      <!-- 9. Hallucination -->
+      <section id="hallucination">
+        <h2>AI sebevědomě lže</h2>
+        <div class="content">
+          <p class="text-xl"><strong>Halucinace</strong> = AI si vymyslí odpověď a tváří se 100% jistě.</p>
+          <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:24px; margin-top:14px;">
+            <div class="card stop"><p><i class="fa-solid fa-comment-slash accent-red"></i> <strong>Nikdy neřekne „nevím"</strong><br>vždycky něco vyplodí</p></div>
+            <div class="card stop"><p><i class="fa-solid fa-file-circle-xmark accent-red"></i> <strong>Vymyslí normu, paragraf, číslo</strong><br>které neexistují</p></div>
+            <div class="card stop"><p><i class="fa-solid fa-volume-high accent-red"></i> <strong>Čím jistější tón</strong><br>tím větší pozor</p></div>
+          </div>
+          <p class="text-lg" style="margin-top:auto;">Řekne to <strong>stejným tónem jako pravdu.</strong></p>
+        </div>
+        <aside class="notes">AI má vlastnost, kterou musíte znát: nikdy neřekne „tohle nevím". Vždycky něco odpoví, naprosto sebejistě. Tomu se říká halucinace. Vymyslí číslo normy, která neexistuje, nebo paragraf, který si vycucala. A řekne to stejným tónem jako pravdu. ŽIVÉ DEMO: tady nechat AI vymyslet konkrétní ČSN normu — ukázat, jak přesvědčivě lže. (Připravit a otestovat prompt předem.)</aside>
+      </section>
+
+      <!-- 10. Where it hurts -->
+      <section id="where-hurts">
+        <h2>Kde to bolí v praxi</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:30px; align-items:center;">
+            <div class="card stop">
+              <p><strong>Kde halucinace stojí peníze:</strong></p>
+              <ul>
+                <li>Špatně spočítané hodnoty</li>
+                <li>Vymyšlená norma v technické zprávě</li>
+                <li>Chybný kód ve speciálním jazyce, který AI neovládá</li>
+              </ul>
+            </div>
+            <div class="card go">
+              <p><strong>Pozitivní vzor:</strong></p>
+              <p>AI jako <strong>druhá kontrola</strong>, ne jako autor.</p>
+              <p class="text-muted">Dvě čísla se neshodují? → zastav se a zkontroluj.</p>
+            </div>
+          </div>
+          <p class="text-lg" style="margin-top:auto;">AI vám zrychlí práci. <strong>Autor jste pořád vy.</strong></p>
+        </div>
+        <aside class="notes">Když AI počítá technické hodnoty nebo píše technickou zprávu, jedna vymyšlená norma znamená, že to za vámi přijde zpátky — od kolegy, nebo hůř od zákazníka. Dobrý způsob je opačný: necháte si od AI něco spočítat, pak to spočítáte normálně a porovnáte. Sedí? Klid. Nesedí? AI vás upozornila, že se máte zastavit. AI není ten, kdo to podepíše — je to druhý názor.</aside>
+      </section>
+
+      <!-- DIVIDER 3 -->
+      <section id="divider-resp" class="section-divider" data-state="is-section-divider">
+        <h2 class="text-3xl">3 · Odpovědnost</h2>
+        <p class="text-xl">Kdo za to ručí</p>
+      </section>
+
+      <!-- 11. Who signs -->
+      <section id="who-signs">
+        <h2>Kdo se pod to podepíše</h2>
+        <div class="content">
+          <blockquote class="text-2xl">AI není právní subjekt. Odpovědnost zůstává na <span class="accent">člověku a firmě.</span></blockquote>
+          <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:24px; margin-top:14px;">
+            <div class="card"><p><strong>Profesní</strong><br>autorizovaný inženýr ručí razítkem</p></div>
+            <div class="card"><p><strong>Smluvní</strong><br>firma ručí zákazníkovi</p></div>
+            <div class="card"><p><strong>Trestní</strong><br>u vadného bezpečnostního systému i obecné ohrožení</p></div>
+          </div>
+          <p class="text-lg" style="margin-top:auto;">AI práci zrychlí, ale <strong>odpovědnost nepřevezme.</strong></p>
+        </div>
+        <aside class="notes">Nejkratší vrstva. AI se pod nic nepodepíše. Nemůžete přijít za zákazníkem a říct „to napsala umělá inteligence". Kdo to orazítkuje, ten ručí. Vy profesně, firma smluvně, a u bezpečnostních systémů i trestně, kdyby se něco stalo. AI vám zrychlí práci, ale odpovědnost neseme dál my.</aside>
+      </section>
+
+      <!-- DIVIDER 4 -->
+      <section id="divider-law" class="section-divider" data-state="is-section-divider">
+        <h2 class="text-3xl">Právo — bez paniky</h2>
+        <p class="text-xl">Co po vás zákon vlastně chce</p>
+      </section>
+
+      <!-- 12. EU AI Act timeline -->
+      <section id="ai-act">
+        <h2>EU AI Act bez paniky</h2>
+        <div class="content">
+          <div style="display:flex; flex-direction:column; gap:10px; margin-top:4px;">
+            <div class="card"><p style="margin:0;"><strong>2/2025</strong> — zákazy + <span class="accent"><strong>povinnost školit lidi (AI gramotnost)</strong></span></p></div>
+            <div class="card"><p style="margin:0;"><strong>8/2025</strong> — pravidla pro velké modely</p></div>
+            <div class="card"><p style="margin:0;"><strong>12/2027</strong> — vysoce rizikové povinnosti <span class="text-muted">(odloženo)</span></p></div>
+          </div>
+          <div class="note" style="margin-top:14px;"><p style="margin:0;"><i class="fa-solid fa-circle-check accent"></i> Běžný uživatel hotových nástrojů → hlavní povinnost = <strong>proškolit lidi.</strong> Tímhle školením si ji plníte.</p></div>
+        </div>
+        <aside class="notes">Slyšeli jste o AI Actu a možná máte pocit, že na vás padá velká regulace. Nepadá. Tvrdé povinnosti se týkají těch, kdo AI vyrábějí nebo nasazují do vysoce rizikových věcí, a Evropa je navíc odložila na konec roku 2027. Vy jste běžný uživatel hotového nástroje. Jediná reálná povinnost platí od února 2025 — proškolit lidi v bezpečném používání AI. Tím, že tu sedíte, si firma tu povinnost plní. POZOR: vysoce rizikové odloženo Digital Omnibusem na 12/2027 — nepoužívat starší datum 8/2026.</aside>
+      </section>
+
+      <!-- 13. Four risk categories -->
+      <section id="risk-categories">
+        <h2>Kde je AI v zákoně: čtyři kategorie</h2>
+        <div class="content">
+          <div style="margin-top:8px;">
+            <div class="risk-bar risk-prohibited"><i class="fa-solid fa-ban accent-red"></i><p><strong>Zakázané</strong> — social scoring, biometrie na ulici · <span class="text-muted">nesmí se vůbec</span></p></div>
+            <div class="risk-bar risk-high"><i class="fa-solid fa-triangle-exclamation"></i><p><strong>Vysoce rizikové</strong> — zdravotnictví, kritická infra, nábor · <span class="text-muted">přísné povinnosti (od 12/2027)</span></p></div>
+            <div class="risk-bar risk-limited"><i class="fa-solid fa-circle-info"></i><p><strong>Omezené</strong> — chatbot, deepfake · <span class="text-muted">povinnost označit</span></p></div>
+            <div class="risk-bar risk-minimal"><i class="fa-solid fa-check accent-green"></i><p><strong>Minimální</strong> — běžná práce s textem, rešerše · <span class="text-muted">bez povinností</span></p></div>
+          </div>
+          <p class="text-lg" style="margin-top:auto;">V běžné práci jste <strong class="accent-green">dole, v zelené</strong> — ne to, čeho se bát.</p>
+        </div>
+        <aside class="notes">Ať z toho nemáte mlhu — zákon dělí AI do čtyř škatulek podle nebezpečnosti. Nahoře zakázané, jako sledování lidí na ulici. Pak vysoce rizikové — zdravotnictví, nábor, kritická infrastruktura. Pak omezené — chatbot, který se musí představit. A dole minimální — obyčejné psaní, rešerše, shrnutí. Vy v běžné práci jste úplně dole, v zelené. To, čím vás média straší, je úplně jiná liga. Proto bez paniky.</aside>
+      </section>
+
+      <!-- 14. Copyright -->
+      <section id="copyright">
+        <h2>Autorské právo: čí to vlastně je</h2>
+        <div class="content">
+          <ul class="text-lg" style="margin-top:8px;">
+            <li><strong>Výstup AI</strong> ≠ automaticky vaše chráněné dílo</li>
+            <li><strong>Vstup</strong> může být cizí chráněné dílo — pozor, co vkládáte</li>
+            <li>Modely se učily i z chráněného obsahu → <strong>probíhají spory</strong> (vydavatelé, fotobanky)</li>
+          </ul>
+          <div class="note" style="margin-top:auto;"><p style="margin:0;">Prakticky: výstup AI berte jako <strong>polotovar</strong>, ne jako hotové dílo s jasným vlastníkem.</p></div>
+        </div>
+        <aside class="notes">Krátká odbočka. Když vám AI něco napíše nebo nakreslí, není automaticky jasné, že je to vaše chráněné dílo — na rozdíl od toho, co vytvoříte vlastní hlavou. A naopak, když do AI vložíte cizí text nebo obrázek, může to být cizí chráněné dílo. Kolem toho se vedou velké spory — vydavatelé a fotobanky žalují. Pro vás: výstup AI berte jako polotovar, který dotáhnete, ne hotovou věc s razítkem vlastníka.</aside>
+      </section>
+
+      <!-- DIVIDER 5 -->
+      <section id="divider-todo" class="section-divider" data-state="is-section-divider">
+        <h2 class="text-3xl">Co s tím</h2>
+        <p class="text-xl">Pravidla, návyky, směrnice</p>
+      </section>
+
+      <!-- 15. Decision tree -->
+      <section id="decision-tree">
+        <h2>Rozhodovací strom: smím, nesmím</h2>
+        <div class="content">
+          <p class="text-xl text-center" style="margin-bottom:18px;">Obsahuje to <strong>osobní údaj / NDA / obchodní tajemství?</strong></p>
+          <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:20px;">
+            <div class="card stop text-center"><p><strong class="accent-red">ANO</strong><br>nedávat<br>(nebo anonymizovat)</p></div>
+            <div class="card go text-center"><p><strong class="accent-green">NE</strong><br>veřejná informace<br><strong>OK, jeď</strong></p></div>
+            <div class="card text-center" style="border-left:6px solid #F5A623;"><p><strong class="accent">NEVÍM</strong><br>zeptej se /<br>radši anonymizuj</p></div>
+          </div>
+          <p class="text-lg text-center" style="margin-top:auto;">Pochybnost je <strong>signál</strong>, ne otrava.</p>
+        </div>
+        <aside class="notes">Co s tím konkrétně. Jeden jednoduchý strom. Než něco vložíte: je v tom osobní údaj, něco pod NDA, nebo naše obchodní tajemství? Ano — nedávejte, nebo nejdřív vyčistěte. Ne, je to obecná věc — jeďte naplno. Nevíte — což bude často — berte to jako „ano" a zeptejte se. Pochybnost je signál, ne otrava.</aside>
+      </section>
+
+      <!-- 16. Habits -->
+      <section id="habits">
+        <h2>Pět návyků, které vás kryjí</h2>
+        <div class="content">
+          <ol class="text-lg" style="margin-top:8px; padding-left:24px;">
+            <li>Anonymizuj před vložením (vyhoď jména, čísla zakázek)</li>
+            <li>Používej firemní účet, ne soukromý</li>
+            <li>Výstup vždy zkontroluj proti zdroji</li>
+            <li>U citlivé zakázky se zeptej, než nahraješ</li>
+            <li>Když nevíš, ptej se — neraď si sám</li>
+          </ol>
+        </div>
+        <aside class="notes">Pět návyků, po pár dnech je děláte automaticky. Anonymizace — vyhoďte jméno a číslo zakázky, podstata zůstane. Firemní účet — ne ten doma na recepty, ten není pod smlouvou. Kontrola výstupu — nikdy nekopírujte do dokumentu pro zákazníka bez přečtení. A poslední dva: když si nejste jistí, není ostuda se zeptat. Ostuda je nahrát citlivou zakázku a zjistit to až od právníka.</aside>
+      </section>
+
+      <!-- 17. Company directive -->
+      <section id="directive">
+        <h2>Firemní směrnice pro AI</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:30px; align-items:center;">
+            <div>
+              <p>Dvě stránky, ať se to za týden nezapomene:</p>
+              <ul>
+                <li>Co se smí / co nikdy</li>
+                <li>Jak anonymizovat</li>
+                <li>Které nástroje a které ne</li>
+                <li>Navázáno na firemní kyberbezpečnost</li>
+              </ul>
+            </div>
+            <div class="note"><p style="margin:0;"><i class="fa-solid fa-scale-balanced accent"></i> Před nasazením <strong>projde právníkem.</strong></p></div>
+          </div>
+          <p class="text-lg" style="margin-top:auto;">Ne papír do šuplíku — <strong>ta čára napsaná černé na bílém.</strong></p>
+        </div>
+        <aside class="notes">Tohle všechno nemá smysl, když to za týden zapomenete. Proto z toho uděláme dvě stránky — firemní směrnici pro AI. Co se smí, co ne, jak anonymizovat, jaký nástroj. Napojíme to na kyberbezpečnost, kterou už firma má. A než to vyhlásíte, pošlete to právníkovi. Není to papír do šuplíku, je to ta čára napsaná černé na bílém, aby ji každý nový člověk dostal hned.</aside>
+      </section>
+
+      <!-- 18. Quiz -->
+      <section id="quiz">
+        <h2>Cvičení: smí / nesmí?</h2>
+        <div class="content">
+          <ol class="text-lg" style="margin-top:8px; padding-left:24px;">
+            <li>Nahrát projektovou dokumentaci zákazníka, ať to AI shrne</li>
+            <li>Zeptat se AI na obsah veřejné normy ČSN</li>
+            <li>Vložit interní kalkulaci, ať z ní AI napíše nabídku</li>
+            <li>Nechat AI přeformulovat e-mail zákazníkovi</li>
+            <li>Nahrát seznam zaměstnanců s rodnými čísly</li>
+          </ol>
+          <p class="text-muted text-center" style="margin-top:auto;">Hlasujte — smí, nesmí. Pak rozbor.</p>
+        </div>
+        <aside class="notes">A teď vy. Pět situací z praxe. U každé zvedněte ruku — smí, nesmí. Pak rozbor. ŘEŠENÍ: 1) NESMÍ / anonymizovat. 2) SMÍ (veřejná informace). 3) NESMÍ / anonymizovat. 4) SMÍ, ale výstup zkontrolovat. 5) NESMÍ NIKDY (zvláštní kategorie — rodná čísla). Napovědět: ne všechno, co vypadá nevinně, nevinné je — a ne všechno, co vypadá nebezpečně, je zakázané.</aside>
+      </section>
+
+      <!-- 19. Cheat sheet -->
+      <section id="cheatsheet">
+        <h2>Tahák na jeden slajd</h2>
+        <div class="content">
+          <div style="display:flex; flex-direction:column; gap:12px; margin-top:6px;">
+            <div class="card"><p style="margin:0;"><strong>1. Vstup</strong> — osobní údaje, NDA a obchodní tajemství ven nepatří. Placený účet to nevyřeší.</p></div>
+            <div class="card"><p style="margin:0;"><strong>2. Výstup</strong> — AI sebevědomě lže, vždy zkontroluj.</p></div>
+            <div class="card"><p style="margin:0;"><strong>3. Odpovědnost</strong> — podepíše se člověk, ne AI.</p></div>
+          </div>
+          <div class="note" style="margin-top:auto;"><p style="margin:0;">Když si nevíš rady: <strong>hospodský test</strong> + <strong>zeptej se.</strong></p></div>
+        </div>
+        <aside class="notes">Když si z celé hodiny odnesete jeden slajd, ať je to tenhle. Tři věty. Co dovnitř — pozor na osobní údaje, NDA a tajemství, placený účet to nevyřeší. Co ven — kontrolujte, lže s jistotou. Kdo ručí — pořád člověk. Ve chvíli nejistoty: hospodský test a zeptat se. Tím vás AI neohrozí, ale pořádně zrychlí.</aside>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 1280,
+      height: 720,
+      margin: 0,
+      controls: true,
+      progress: true,
+      slideNumber: false,
+      hash: true,
+      transition: 'slide',
+      center: false,
+      plugins: [ RevealNotes ]
+    });
+  </script>
+</body>
+</html>
