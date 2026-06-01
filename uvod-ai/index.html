@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI s hlavou — jak to funguje a jak ji používat s rozumem</title>
+
+  <!-- Reveal.js core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Chart.js for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ============ TITUL ============ -->
+      <section id="title" class="section-divider" data-state="is-section-divider">
+        <h1>AI s hlavou</h1>
+        <p>Jak to funguje a jak ji používat s rozumem</p>
+        <p class="text-muted">Praktický úvod do umělé inteligence</p>
+      </section>
+
+      <!-- ============ O ČEM TO JE ============ -->
+      <section id="intro">
+        <h2>Než dojde na nástroje</h2>
+        <div class="content">
+          <ul class="text-lg">
+            <li>AI dnes není jedna věc a není to kouzlo. Než má smysl řešit konkrétní aplikace, vyplatí se rozumět tomu, <strong>co se pod tím skrývá</strong> — a jak se k tomu chovat.</li>
+          </ul>
+          <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 18px;">
+            <div class="card"><p><i class="fa-solid fa-gears accent"></i> <strong>Jak to funguje</strong></p><p class="text-muted">token, kontext, čerstvost</p></div>
+            <div class="card"><p><i class="fa-solid fa-coins accent"></i> <strong>Kolik to stojí</strong></p><p class="text-muted">předplatné vs. tokeny</p></div>
+            <div class="card"><p><i class="fa-solid fa-arrow-trend-up accent"></i> <strong>Co to umí</strong></p><p class="text-muted">dnes i za rok</p></div>
+            <div class="card warn"><p><i class="fa-solid fa-triangle-exclamation"></i> <strong>Kde jsou nástrahy</strong></p><p class="text-muted">slop, horečka, zahlcení</p></div>
+          </div>
+          <div class="note text-lg" style="margin-top:18px;">
+            <p><strong>Cíl:</strong> po téhle části poznáte rozdíl mezi <span class="accent">dobrým rozhodnutím</span> a slepou důvěrou.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SEKCE 1 ============ -->
+      <section id="divider-1" class="section-divider" data-state="is-section-divider">
+        <h1>1 · Co je vlastně AI</h1>
+        <p>Demystifikace — žádné kouzlo, ale srozumitelný princip</p>
+      </section>
+
+      <section id="co-je-ai">
+        <h2>AI = jazykový model, ne kouzlo</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+            <div>
+              <p class="text-muted text-uppercase">Co to je</p>
+              <p class="text-lg">Dnešní AI (tzv. <strong>jazykový model</strong>) je obří statistický stroj. Naučil se z ohromného množství textu a v jádru dělá jednu věc: <strong>předpovídá další slovo</strong>.</p>
+            </div>
+            <div>
+              <p class="text-muted text-uppercase">Jak z toho vznikne odpověď</p>
+              <p class="text-lg">Předpověď slova za slovem, tisíckrát opakovaná, dá souvislou odpověď, překlad, shrnutí i kód. Žádné „přemýšlení" jako u člověka — <strong>skládání pravděpodobného</strong>.</p>
+            </div>
+          </div>
+          <div class="card warn" style="margin-top:18px;">
+            <p><i class="fa-solid fa-triangle-exclamation"></i> <strong>Důsledek:</strong> model nerozlišuje pravdu a nepravdu. Skládá nejpravděpodobnější pokračování. Většinou trefí — někdy se ale sebejistě splete.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="vic-modelu" style="display: flex; flex-direction: column; height: 100%;">
+        <h2>Modelů je víc a střídají se</h2>
+        <div style="flex: 1; display: grid; grid-template-rows: auto 1fr; gap: 16px; min-height: 0; min-width: 0; padding-top: var(--content-gap);">
+          <div class="note">
+            <p>Neexistuje jeden „ChatGPT". Modelů jsou desítky od různých tvůrců a dají se <strong>střídat</strong> — každý je v něčem lepší. <span class="accent">Trh se převrací měsíc od měsíce:</span> jeden tvůrce spadl z ~36 % na ~14 % za rok. Lekce: <strong>nevázat se na jediný model</strong>.</p>
+          </div>
+          <div style="position: relative; min-height: 0; min-width: 0;">
+            <canvas data-chart="bar">
+            <!--
+            {
+              "data": {
+                "labels": ["Anthropic","DeepSeek","Google","Xiaomi","OpenAI","Tencent","Qwen","MiniMax","Ostatní"],
+                "datasets": [{
+                  "label": "Podíl na použití (%)",
+                  "data": [16.1, 16.1, 13.9, 10.5, 8.8, 8.0, 4.5, 3.2, 12.4],
+                  "backgroundColor": ["#0F2A43","#0F2A43","#F5A623","#0F2A43","#0F2A43","#0F2A43","#0F2A43","#0F2A43","#9FB2C4"]
+                }]
+              },
+              "options": {
+                "maintainAspectRatio": false,
+                "plugins": { "legend": { "display": false }, "title": { "display": true, "text": "Podíl tvůrců modelů na použití (zdroj: OpenRouter, 2026) — Google žlutě" } },
+                "scales": { "y": { "beginAtZero": true, "title": { "display": true, "text": "% použitých tokenů" } } }
+              }
+            }
+            -->
+            </canvas>
+          </div>
+        </div>
+      </section>
+
+      <section id="velke-male">
+        <h2>Velké vs. malé · cloud vs. lokálně</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+            <div class="card">
+              <p><i class="fa-solid fa-cloud accent"></i> <strong>V cloudu (vzdáleně)</strong></p>
+              <ul>
+                <li>Nejschopnější, největší modely</li>
+                <li>Platí se za použití nebo paušálem</li>
+                <li>Data odcházejí k poskytovateli</li>
+              </ul>
+            </div>
+            <div class="card">
+              <p><i class="fa-solid fa-laptop accent"></i> <strong>Lokálně (na vlastním PC)</strong></p>
+              <ul>
+                <li>Soukromí, funguje i offline</li>
+                <li>Po instalaci bez dalších plateb</li>
+                <li>Slabší a náročné na výkon počítače</li>
+              </ul>
+            </div>
+          </div>
+          <div class="note" style="margin-top:18px;">
+            <p><strong>Pravidlo:</strong> ty nejschopnější modely jsou velké a běží v cloudu. Malý lokální model stačí na jednoduché úkoly, ne na to nejtěžší. <span class="accent">Levnější modely ale rychle dohánějí</span> — viz cena vs. inteligence dál.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SEKCE 2 ============ -->
+      <section id="divider-2" class="section-divider" data-state="is-section-divider">
+        <h1>2 · Jak to funguje</h1>
+        <p>Tři věci, na které narazíte každý den</p>
+      </section>
+
+      <section id="token">
+        <h2>Token — čím AI počítá</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+            <div>
+              <p class="text-muted text-uppercase">Co je token</p>
+              <p>AI nečte slova, ale <strong>tokeny</strong> — kousky slov. „Energetika" jsou klidně tři tokeny. Hrubě: <strong>1 token ≈ 0,75 slova</strong> (v češtině o něco víc).</p>
+              <p>V tokenech se měří <strong>všechno</strong>: délka vstupu, délka odpovědi i cena.</p>
+            </div>
+            <div>
+              <p class="text-muted text-uppercase">Rychlost (tok/s)</p>
+              <p>Modely se chlubí rychlostí v <strong>tokenech za sekundu</strong>. V praxi ale vysoké číslo na papíře ≠ rychlá odpověď.</p>
+              <div class="card warn">
+                <p><strong>Nejvíc vás zdrží:</strong> <em>reasoning</em> (model „přemýšlí", než začne odpovídat) a <em>tool calling</em> (volá nástroje, hledá na webu).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="kontext">
+        <h2>Kontextové okno — pracovní paměť</h2>
+        <div class="content">
+          <ul class="text-lg">
+            <li><strong>Kontextové okno</strong> je vše, co AI „vidí najednou": vaše instrukce, historie chatu, vložené dokumenty.</li>
+            <li>Měří se v tokenech. Dnešní špička je kolem <strong>1 milionu tokenů</strong> — stovky stran textu.</li>
+          </ul>
+          <div class="card warn" style="margin-top:16px;">
+            <p><i class="fa-solid fa-triangle-exclamation"></i> <strong>Když okno přeteče,</strong> model začne zapomínat začátek. Dlouhá konverzace ztrácí nit a kvalitu.</p>
+          </div>
+          <div class="note" style="margin-top:16px;">
+            <p><strong>Praktika:</strong> na nové téma raději <span class="accent">novou, čistou konverzaci</span> než donekonečna natahovat jednu.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="cerstvost">
+        <h2>Čerstvost a datum trénování</h2>
+        <div class="content">
+          <ul class="text-lg">
+            <li>Každý model je „<strong>zamrzlý</strong>" ke dni, kdy skončil jeho trénink (tzv. <em>knowledge cutoff</em>). O ničem novějším sám od sebe neví.</li>
+            <li>Bez připojení k webu vám o včerejší události buď řekne, že ji nezná — nebo si ji <strong>sebejistě vymyslí</strong>.</li>
+          </ul>
+          <div class="note" style="margin-top:18px;">
+            <p><strong>Pravidlo:</strong> u všeho aktuálního <span class="accent">zapněte vyhledávání</span> a ověřujte. Datum tréninku je strop znalostí, ne dnešek.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SEKCE 3 ============ -->
+      <section id="divider-3" class="section-divider" data-state="is-section-divider">
+        <h1>3 · Jak se za AI platí</h1>
+        <p>Dva modely placení a jedno časté nepochopení</p>
+      </section>
+
+      <section id="predplatne-tokeny">
+        <h2>Předplatné vs. tokeny</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+            <div class="card">
+              <p><i class="fa-solid fa-calendar-check accent"></i> <strong>Předplatné (paušál)</strong></p>
+              <ul>
+                <li>Fixní částka měsíčně</li>
+                <li>Běžné používání „bez počítání"</li>
+                <li>Pro jednotlivce a každodenní práci</li>
+              </ul>
+            </div>
+            <div class="card">
+              <p><i class="fa-solid fa-gauge-high accent"></i> <strong>Tokeny (API)</strong></p>
+              <ul>
+                <li>Platíte za skutečnou spotřebu</li>
+                <li>Cena zvlášť za vstup a za výstup</li>
+                <li>Pro automatizace a napojení do aplikací</li>
+              </ul>
+            </div>
+          </div>
+          <div class="note" style="margin-top:18px;">
+            <p><strong>Zjednodušeně:</strong> kdo AI používá → <span class="accent">předplatné</span>. Kdo s AI staví nástroje a automatizace → <span class="accent">tokeny</span>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="cena-inteligence">
+        <h2>Cena vs. inteligence</h2>
+        <div class="content">
+          <p class="text-lg"><strong>Nejchytřejší ≠ nejlepší volba.</strong> Rozdíl ve schopnostech bývá malý — rozdíl v ceně obrovský.</p>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 10px;">
+            <div class="card good">
+              <p><strong>Špičkový model</strong> <span class="text-muted">(např. Claude Opus)</span></p>
+              <p>Inteligence <strong>61,4</strong> · výstup <strong>$25</strong> / mil. tokenů · kontext 1 M</p>
+            </div>
+            <div class="card">
+              <p><strong>Levný vyzyvatel</strong> <span class="text-muted">(např. Xiaomi MiMo)</span></p>
+              <p>Inteligence <strong>53,8</strong> · výstup <strong>$0,87</strong> / mil. tokenů · kontext 1,05 M</p>
+            </div>
+          </div>
+          <div class="note text-xl text-center" style="margin-top:16px;">
+            <p>≈ <span class="accent">13 %</span> rozdíl ve schopnosti &nbsp;·&nbsp; ≈ <span class="accent">29×</span> rozdíl v ceně</p>
+          </div>
+          <p class="text-muted" style="margin-top:12px;">Co je „drahé": <strong>dlouhý kontext a dlouhé odpovědi</strong> = víc tokenů = víc peněz a pomaleji. Na rutinu levný model, špičku nechte na těžké úkoly.</p>
+        </div>
+      </section>
+
+      <!-- ============ SEKCE 4 ============ -->
+      <section id="divider-4" class="section-divider" data-state="is-section-divider">
+        <h1>4 · Co AI umí a kam míří</h1>
+        <p>Pravidlo palce, jeden mentální model a výhled na rok</p>
+      </section>
+
+      <section id="pravidlo-palce">
+        <h2>Pravidlo palce</h2>
+        <div class="content">
+          <div class="note text-2xl text-center" style="margin-bottom: 18px;">
+            <p>AI časem zvládne <span class="accent">vše, co jde deterministicky popsat</span> a co se dělá <span class="accent">za počítačem</span>.</p>
+          </div>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+            <div class="card good">
+              <p><i class="fa-solid fa-check"></i> <strong>Sedí AI</strong></p>
+              <ul>
+                <li>Psaní, shrnutí, překlad, rešerše</li>
+                <li>Práce s daty, tabulkami, kódem</li>
+                <li>Rutina a klikání v aplikacích</li>
+              </ul>
+            </div>
+            <div class="card warn">
+              <p><i class="fa-solid fa-xmark"></i> <strong>Zatím nesedí</strong></p>
+              <ul>
+                <li>Fyzická práce v terénu</li>
+                <li>Úkoly bez jasného zadání</li>
+                <li>Finální rozhodnutí a odpovědnost</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="stazista">
+        <h2>Mentální model: autistický stážista</h2>
+        <div class="content">
+          <p class="text-lg">Dobrý obraz AI: <strong>autistický stážista</strong>. V něčem extrémně dobrý, v něčem natvrdlý — a oboje s naprostou jistotou.</p>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 8px;">
+            <div class="card good">
+              <p><strong>Nadlidsky dobrý</strong></p>
+              <ul>
+                <li>Shrne 100 stran za vteřinu</li>
+                <li>Píše kód, mluví 50 jazyky</li>
+                <li>Nikdy se neunaví, nenudí</li>
+              </ul>
+            </div>
+            <div class="card warn">
+              <p><strong>Natvrdlý</strong></p>
+              <ul>
+                <li>Zakopne o triviálnost (kolik „r" je ve „strawberry")</li>
+                <li>Splete jednoduchý součet</li>
+                <li>„Nevidí" očividné</li>
+              </ul>
+            </div>
+          </div>
+          <blockquote style="margin-top:16px;">Myšlení můžete delegovat. Porozumění ne.<cite>Andrej Karpathy</cite></blockquote>
+          <p class="text-lg"><strong>Proto:</strong> zadejte, ale <span class="accent">zkontrolujte</span>. Odpovědnost za výsledek zůstává na vás.</p>
+        </div>
+      </section>
+
+      <section id="vyhled">
+        <h2>Výhled — zhruba rok dopředu</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+            <div class="card"><p><i class="fa-solid fa-robot accent"></i> <strong>Agenti, co jednají</strong></p><p class="text-muted">nejen radí, ale sami klikají, vyplňují a dotahují úkoly</p></div>
+            <div class="card"><p><i class="fa-solid fa-arrow-down-wide-short accent"></i> <strong>Levnější a chytřejší</strong></p><p class="text-muted">cena za stejný výkon padá řádově ročně</p></div>
+            <div class="card"><p><i class="fa-solid fa-photo-film accent"></i> <strong>Multimodalita standardem</strong></p><p class="text-muted">text, obraz, hlas a video v jednom</p></div>
+            <div class="card"><p><i class="fa-solid fa-microchip accent"></i> <strong>Lokální modely „dost dobré"</strong></p><p class="text-muted">na běžné úkoly i bez cloudu</p></div>
+          </div>
+          <div class="note" style="margin-top:18px;">
+            <p><strong>Směr je jasný:</strong> víc samostatnosti, nižší cena a hlubší zapojení do nástrojů, které už dnes používáte.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SEKCE 5 ============ -->
+      <section id="divider-5" class="section-divider" data-state="is-section-divider">
+        <h1>5 · Stinná strana a hygiena</h1>
+        <p>Nástrahy, o kterých se mluví míň, než by se mělo</p>
+      </section>
+
+      <section id="slop">
+        <h2>AI slop — záplava balastu</h2>
+        <div class="content">
+          <p class="text-lg"><strong>AI slop</strong> = obsah generovaný ve velkém bez hodnoty — články, obrázky, videa, jen aby zaplnily místo.</p>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 8px;">
+            <div class="card" style="text-align:center;">
+              <p class="text-4xl accent" style="margin:0;"><strong>~50–60 %</strong></p>
+              <p class="text-muted">nově publikovaného obsahu na webu nese známky AI generace (2025–2026)</p>
+            </div>
+            <div class="card" style="text-align:center;">
+              <p class="text-4xl accent" style="margin:0;"><strong>až 90 %</strong></p>
+              <p class="text-muted">online obsahu mělo být dle starší předpovědi generováno do roku 2026</p>
+            </div>
+          </div>
+          <div class="note" style="margin-top:16px;">
+            <p><strong>Proč přibývá:</strong> generovat je skoro zdarma. Balast roste rychleji než kvalita — a roste i cena schopnosti rozpoznat, co stojí za přečtení.</p>
+          </div>
+        </div>
+        <div class="footnote"><p>Odhady se liší podle definice. Zdroje: Stanford Internet Observatory (2026), Futurism (2025), předpověď 90 %: Europol (2022).</p></div>
+      </section>
+
+      <section id="psychoza">
+        <h2>AI psychóza a horečka</h2>
+        <div class="content">
+          <ul class="text-lg">
+            <li>Kolem AI je <strong>horečka</strong> — od přehnaných slibů po reálné psychické riziko u intenzivního používání.</li>
+            <li>„<strong>AI psychóza</strong>": u části lidí po dlouhých, pohlcujících konverzacích narůstají bludy — chatbot jejich přesvědčení <strong>zrcadlí a posiluje</strong>.</li>
+          </ul>
+          <div class="card warn" style="margin-top:14px;">
+            <p><i class="fa-solid fa-triangle-exclamation"></i> <strong>Varovné signály:</strong> víra, že AI je vědomá bytost · pocit „tajného poslání" · citová závislost · ztráta spánku a kontaktu s lidmi kvůli AI.</p>
+          </div>
+          <p class="text-lg" style="margin-top:12px;"><strong>Hype × realita:</strong> AI je mocný nástroj — ne věštec ani přítel. <span class="accent">Zdravý odstup je součást dovednosti.</span></p>
+        </div>
+        <div class="footnote"><p>Zdroje: TIME, Psychology Today, UCSF (2025–2026).</p></div>
+      </section>
+
+      <section id="hygiena">
+        <h2>Lidi to musí číst</h2>
+        <div class="content">
+          <div class="note text-xl" style="margin-bottom: 16px;">
+            <p>Co pošlete dál, musí někdo přečíst. <strong>Nezahlcovat ostatní AI výstupem je dovednost.</strong></p>
+          </div>
+          <ul class="text-lg">
+            <li><strong>Čtěte, co odesíláte.</strong> Když jste to nečetli vy, proč by to měl číst on?</li>
+            <li><strong>Kraťte.</strong> Tři věty, které sedí, jsou víc než tři odstavce balastu.</li>
+            <li><strong>Berte odpovědnost za výstup.</strong> Podepisujete se pod to vy, ne AI.</li>
+            <li><strong>Odmítejte slop</strong> — u sebe i u druhých.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ ZÁVĚR ============ -->
+      <section id="zaver">
+        <h2>Tahák na závěr</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
+            <div class="card" style="text-align:center;"><p><span class="accent"><strong>1</strong></span></p><p class="text-muted">Co to je</p></div>
+            <div class="card" style="text-align:center;"><p><span class="accent"><strong>2</strong></span></p><p class="text-muted">Jak funguje</p></div>
+            <div class="card" style="text-align:center;"><p><span class="accent"><strong>3</strong></span></p><p class="text-muted">Kolik stojí</p></div>
+            <div class="card" style="text-align:center;"><p><span class="accent"><strong>4</strong></span></p><p class="text-muted">Co umí</p></div>
+            <div class="card" style="text-align:center;"><p><span class="accent"><strong>5</strong></span></p><p class="text-muted">Nástrahy</p></div>
+          </div>
+          <div class="note text-2xl" style="margin-top:22px;">
+            <p>Používejte AI <span class="accent">s hlavou</span>: rozumějte základu, ověřujte výstup a šetřete pozornost druhých.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 1280,
+      height: 720,
+      margin: 0,
+      controls: true,
+      progress: true,
+      slideNumber: false,
+      hash: true,
+      transition: 'slide',
+      center: false,
+      plugins: [ RevealChart ],
+      chart: {
+        defaults: Object.assign({
+          color: 'rgba(0, 0, 0, 0.8)',
+          borderColor: 'rgba(0, 0, 0, 0.8)',
+          devicePixelRatio: 2
+        }, window.location.search.includes('export') ? { animation: false } : {})
+      }
+    });
+  </script>
+</body>
+</html>
