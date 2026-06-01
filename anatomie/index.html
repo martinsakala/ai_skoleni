@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anatomie session</title>
+
+  <!-- Reveal.js core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Chart.js for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section id="title" class="section-divider" data-state="is-section-divider">
+        <h1>Anatomie session</h1>
+        <p class="text-2xl"><span class="accent">Co se děje, než ti AI odpoví</span></p>
+        <p class="text-muted">AI školení Inelsev Energie · Blok 1 + 3</p>
+      </section>
+
+      <section id="divider-1" class="section-divider" data-state="is-section-divider">
+        <h2 class="text-3xl">Vrstva 1 — Jak to funguje</h2>
+        <p class="text-xl">pro všechny · bez žargonu</p>
+      </section>
+
+      <section id="slide-3">
+        <h2>Model je jen textový prediktor</h2>
+        <div class="content">
+          <p class="text-xl">To, čemu říkáš „AI", je v jádru <strong>model</strong> — program, který dostane text a předpoví jeho pokračování. To je vše.</p>
+          <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:24px; margin-top:12px;">
+            <div class="card"><p><i class="fa-solid fa-ban accent"></i> <strong>Nic „nedělá"</strong><br>neotevře soubor, nepošle mail</p></div>
+            <div class="card"><p><i class="fa-solid fa-brain accent"></i> <strong>Nemá paměť</strong><br>nepamatuje si tě mezi zprávami</p></div>
+            <div class="card"><p><i class="fa-solid fa-screwdriver-wrench accent"></i> <strong>Nemá nástroje</strong><br>text dovnitř → text ven</p></div>
+          </div>
+          <p class="text-lg" style="margin-top:auto;">Žádný kouzelník — jen velmi dobrý „doplňovač" textu.</p>
+        </div>
+      </section>
+
+      <section id="slide-4">
+        <h2>Harness — obal, který dá modelu ruce</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:36px; align-items:center;">
+            <div>
+              <p>To, co používáš (ChatGPT, <strong>Codex</strong>, Claude Code), je <strong>harness</strong> — program kolem modelu. Ten:</p>
+              <ul>
+                <li>drží konverzaci</li>
+                <li>nabízí a spouští nástroje</li>
+                <li>vrací výsledky modelu</li>
+                <li>hlídá oprávnění</li>
+              </ul>
+            </div>
+            <div class="card good">
+              <p class="text-xl">Model = <span class="accent"><strong>mozek</strong></span></p>
+              <p class="text-xl">Harness = <strong>tělo, ruce, smysly, sešit</strong></p>
+              <p class="text-muted">Mozek sám nic neudělá — potřebuje tělo, které jedná.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="slide-5">
+        <h2>Co model dostane na vstup — tři vrstvy</h2>
+        <div class="content">
+          <p class="text-muted">Než vyplodí jediné slovo, „přečte" tohle — v tomto pořadí:</p>
+          <div style="display:flex; flex-direction:column; gap:14px; margin-top:6px;">
+            <div class="card" style="border-left:6px solid #5B6B7B;"><p style="margin:0;"><strong>1. System prompt</strong> — instrukce výrobce. <span class="text-muted">Neviditelné, neměníš.</span></p></div>
+            <div class="card good" style="border-left:6px solid #F5A623;"><p style="margin:0;"><strong>2. AGENTS.md / custom instructions</strong> — <span class="accent">TVOJE vrstva.</span> Vloží se na start každé session, ještě než AI uvidí tvou zprávu.</p></div>
+            <div class="card" style="border-left:6px solid #2E6CA4;"><p style="margin:0;"><strong>3. Tvoje zpráva</strong> — až teď přijde samotný dotaz.</p></div>
+          </div>
+          <p class="text-lg" style="margin-top:14px;">Největší páka na lepší odpovědi = <strong>vrstva 2</strong>, ne chytřejší dotaz.</p>
+        </div>
+      </section>
+
+      <section id="slide-6">
+        <h2>AGENTS.md — vrstva, kterou ovládáš</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:36px; align-items:center;">
+            <div>
+              <p>Napíšeš pravidla <strong>jednou</strong> do souboru → harness je <strong>automaticky vloží na start každé session</strong>. Nemusíš je opakovat v chatu.</p>
+              <p class="text-muted">Živý příklad: tahle „druhý mozek" složka má v kořeni <strong>AGENTS.md</strong> — proto se mi říká „Rod" a na startu načítám paměť.</p>
+            </div>
+            <div class="card">
+              <p><strong>Jiné jméno, stejný princip:</strong></p>
+              <p>Codex → <strong>AGENTS.md</strong><br>Claude Code → <strong>CLAUDE.md</strong><br>ChatGPT → custom instructions</p>
+              <p class="text-muted">Otevřený standard (Linux Foundation, 60k+ projektů).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="slide-7">
+        <h2>Kontext = pracovní paměť</h2>
+        <div class="content">
+          <p>Všechny tři vrstvy + historie + přiložené dokumenty + výstupy nástrojů žijí v jednom <strong>kontextu</strong>. Tři vlastnosti:</p>
+          <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:24px; margin-top:12px;">
+            <div class="card"><p><i class="fa-solid fa-box accent"></i> <strong>Omezený</strong><br>má strop; co se nevejde, model nevidí</p></div>
+            <div class="card"><p><i class="fa-solid fa-wind accent"></i> <strong>Ovlivňuje chování</strong><br>balast = horší odpovědi</p></div>
+            <div class="card"><p><i class="fa-solid fa-coins accent"></i> <strong>Stojí</strong><br>posílá se znovu každý krok</p></div>
+          </div>
+          <p class="text-muted" style="margin-top:auto;">Jak s kontextem pracovat (7 technik) → samostatný materiál „Práce s kontextem".</p>
+        </div>
+      </section>
+
+      <section id="divider-2" class="section-divider" data-state="is-section-divider">
+        <h2 class="text-3xl">Session = znovuzrození</h2>
+        <p class="text-xl" style="max-width:26em;">Každá session začíná od nuly. AI si tě ani minulý chat <span class="accent">nepamatuje</span> — jako by se pokaždé znovu narodila.</p>
+        <p class="text-muted" style="max-width:26em;">Jediná paměť = co znovu dostane do kontextu na startu. Proto AGENTS.md, paměťové soubory, projekty. A „čistý štít" je zároveň tajemství subagentů.</p>
+      </section>
+
+      <section id="slide-9">
+        <h2>Turn = jedno tvé kolo, ale uvnitř smyčka</h2>
+        <div class="content">
+          <p class="text-muted">Není to „1 dotaz → 1 odpověď". Po tvé zprávě běží smyčka:</p>
+          <div style="display:flex; align-items:center; justify-content:center; gap:14px; margin:18px 0; flex-wrap:wrap;">
+            <div class="card" style="text-align:center; min-width:120px;"><i class="fa-solid fa-comment accent"></i><br>tvoje zpráva</div>
+            <i class="fa-solid fa-arrow-right text-muted"></i>
+            <div class="card good" style="text-align:center; min-width:120px;"><i class="fa-solid fa-brain accent"></i><br>model přemýšlí</div>
+            <i class="fa-solid fa-arrow-right text-muted"></i>
+            <div class="card" style="text-align:center; min-width:120px;"><i class="fa-solid fa-screwdriver-wrench accent"></i><br>harness spustí nástroj</div>
+            <i class="fa-solid fa-arrow-right text-muted"></i>
+            <div class="card" style="text-align:center; min-width:120px;"><i class="fa-solid fa-rotate-left accent"></i><br>výsledek zpět</div>
+          </div>
+          <p class="text-center text-muted">↺ opakuje se, dokud není hotovo → teprve pak <strong class="accent">finální odpověď</strong></p>
+          <p class="text-lg" style="margin-top:auto;">Proto to „dlouho přemýšlí" (ne zásek) a vidíš ho číst soubory. Jeden turn = klidně desítky kroků.</p>
+        </div>
+      </section>
+
+      <section id="divider-3" class="section-divider" data-state="is-section-divider">
+        <h2 class="text-3xl">Vrstva 2 — Mechanika hlouběji</h2>
+        <p class="text-xl">pro znalostní pracovníky · práce v Codexu</p>
+      </section>
+
+      <section id="slide-11">
+        <h2>Tool calling — jak model „jedná"</h2>
+        <div class="content">
+          <p class="text-xl">Model nikdy nic neudělá sám — jen <strong>požádá</strong>, harness vykoná.</p>
+          <div style="display:flex; align-items:center; justify-content:center; gap:18px; margin:24px 0; flex-wrap:wrap;">
+            <div class="card good" style="text-align:center;"><strong>MODEL</strong><br><span class="text-muted">„spusť read_file(X)"</span></div>
+            <i class="fa-solid fa-arrow-right accent"></i>
+            <div class="card" style="text-align:center;"><strong>HARNESS</strong><br><span class="text-muted">vykoná akci</span></div>
+            <i class="fa-solid fa-arrow-right accent"></i>
+            <div class="card" style="text-align:center;"><strong>výsledek</strong><br><span class="text-muted">zpět do kontextu</span></div>
+          </div>
+          <p class="text-muted" style="margin-top:auto;">Tohle je mechanika za Gen 3/4 z „Úrovní používání AI": model = mozek říká, harness = ruce dělají.</p>
+        </div>
+      </section>
+
+      <section id="slide-12">
+        <h2>Subagenti a fork — mechanika</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: 1.05fr 1fr; gap:30px;">
+            <div>
+              <p>Subagent = <strong>samostatná session</strong> (vlastní kontext, vlastní smyčka). Do hlavní niti vrátí <strong>jen destilát</strong>. Nepořádek zůstane u něj.</p>
+              <p><span class="badge b-3">fork</span> &nbsp;zdědí kontext rodiče.<br><span class="badge b-4">fresh</span> &nbsp;startuje čistý + briefing.</p>
+            </div>
+            <div class="card" style="font-size:14pt;">
+              <p style="margin:0;"><strong>Hlavní session</strong> <span class="text-muted">(čistá)</span></p>
+              <p style="margin:6px 0;">↓ deleguje</p>
+              <p style="margin:0;" class="accent"><strong>Subagent</strong> — vlastní kontext + smyčka</p>
+              <p class="text-muted" style="margin:2px 0;">„projdi 50 logů, vrať 5 bodů"</p>
+              <p style="margin:6px 0;">↑ vrátí jen destilát</p>
+              <p style="margin:0;">Hlavní session pokračuje <strong>čistá</strong></p>
+            </div>
+          </div>
+          <p class="text-lg" style="margin-top:auto;">Volba: potřebuju, <strong>co už víme</strong> → fork. Chci <strong>nezaujatost / izolaci</strong> → fresh.</p>
+        </div>
+      </section>
+
+      <section id="slide-13">
+        <h2>Proč se subagent vyplatí — 6 situací z praxe</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px 30px; margin-top:4px;">
+            <p style="margin:4px 0;"><i class="fa-solid fa-broom accent"></i> <strong>Čistý kontext</strong> — špinavou práci udělá subagent, vrátí 5 bodů</p>
+            <p style="margin:4px 0;"><i class="fa-solid fa-eye accent"></i> <strong>Nezávislá kontrola</strong> — fresh subagent zreviduje tvou práci nezaujatě</p>
+            <p style="margin:4px 0;"><i class="fa-solid fa-bolt accent"></i> <strong>Paralelně</strong> — N úkolů naráz, výsledky se slijí</p>
+            <p style="margin:4px 0;"><i class="fa-solid fa-users accent"></i> <strong>Více úhlů</strong> — panel rolí (skeptik / bezpečnost / cena)</p>
+            <p style="margin:4px 0;"><i class="fa-solid fa-flask accent"></i> <strong>Riziko v izolaci</strong> — experiment ve vlastním prostoru</p>
+            <p style="margin:4px 0;"><i class="fa-solid fa-layer-group accent"></i> <strong>Nad rámec kontextu</strong> — audit stovek souborů</p>
+          </div>
+          <div class="note" style="margin-top:16px;"><p style="margin:0;"><strong>Headline:</strong> „druhý pár očí, co neseděl na schůzce" — fresh subagent nesdílí tvůj kontext, takže chytí slepá místa a confirmation bias.</p></div>
+        </div>
+      </section>
+
+      <section id="slide-14">
+        <h2>Proč se občas zastaví a ptá na svolení</h2>
+        <div class="content">
+          <p class="text-xl">Některé akce (smazat soubory, <strong>push</strong>, citlivé operace) <strong>gatuje harness</strong> — ne model.</p>
+          <p>Je to bezpečnostní pojistka: o povolení rozhoduje <strong>obal</strong>, který má pravidla, ne samotný model. Proto tě to zastaví a čeká na tvé „ano".</p>
+          <p class="text-muted" style="margin-top:auto;">Když chápeš, že rozhoduje harness (ne „rozmar AI"), víš i kde se to nastavuje.</p>
+        </div>
+      </section>
+
+      <section id="slide-15">
+        <h2>Co si odnést</h2>
+        <div class="content">
+          <ul class="text-lg" style="margin-top:10px;">
+            <li><strong>Největší páka = instrukce předem</strong> v AGENTS.md / custom instructions, ne doptávání za běhu.</li>
+            <li><strong>Měníš téma → nová session.</strong> Čistý štít &gt; tažení balastu.</li>
+            <li><strong>„Dlouho přemýšlí" ≠ zásek</strong> — uvnitř běží smyčka.</li>
+            <li><strong>Velký/špinavý úkol → deleguj.</strong> Chceš poctivou kontrolu → nech to zrevidovat fresh subagentem.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="slide-16">
+        <h2>Tahák — pojmy na jednom místě</h2>
+        <div class="content">
+          <table style="width:100%;">
+            <tr><th>Pojem</th><th>Co to je</th></tr>
+            <tr><td><strong>Model</strong></td><td>textový prediktor; sám nic nedělá, nemá paměť</td></tr>
+            <tr><td><strong>Harness</strong></td><td>obal (Codex, ChatGPT, Claude Code) — dává modelu nástroje a ruce</td></tr>
+            <tr><td><strong>System prompt</strong></td><td>instrukce výrobce na startu — neviditelné, neměníš</td></tr>
+            <tr><td><strong>AGENTS.md</strong></td><td>tvoje instrukce na startu — editovatelné, platí každou session</td></tr>
+            <tr><td><strong>Kontext</strong></td><td>pracovní paměť; konečná, posílá se znovu každý krok</td></tr>
+            <tr><td><strong>Turn</strong></td><td>jedno tvé kolo = uvnitř smyčka mnoha kroků</td></tr>
+            <tr><td><strong>Subagent / fork</strong></td><td>samostatná session; vrátí destilát (fork zdědí kontext)</td></tr>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 1280,
+      height: 720,
+      margin: 0,
+      controls: true,
+      progress: true,
+      slideNumber: false,
+      hash: true,
+      transition: 'slide',
+      center: false,
+      plugins: [ RevealChart ],
+      chart: {
+        defaults: Object.assign({
+          color: 'rgba(0, 0, 0, 0.8)',
+          borderColor: 'rgba(0, 0, 0, 0.8)',
+          devicePixelRatio: 2
+        }, window.location.search.includes('export') ? { animation: false } : {})
+      }
+    });
+  </script>
+</body>
+</html>
