@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Úrovně používání AI</title>
+
+  <!-- Reveal.js core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Chart.js for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section id="title" class="section-divider" data-state="is-section-divider">
+        <h1>Úrovně používání AI</h1>
+        <p class="text-2xl"><span class="accent">Generační posuny</span></p>
+        <p class="text-muted">Blok 1 · AI školení Inelsev Energie</p>
+      </section>
+
+      <section id="divider-1" class="section-divider" data-state="is-section-divider">
+        <h2 class="text-3xl" style="max-width: 22em;">S každou generací AI uzavírá <span class="accent">větší část tvého pracovního cyklu</span> sama — a tvoje role se posouvá od „ptám se" přes „dohlížím" k <span class="accent">„řídím a navrhuju".</span></h2>
+      </section>
+
+      <section id="slide-3">
+        <h2>Známá analogie: úrovně autonomního řízení</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: 1fr 2fr 1fr 2fr 1fr; align-items:center; gap:14px; margin: 6px 0 30px;">
+            <div class="text-center"><div style="font-size:38pt; color:#5B6B7B;"><i class="fa-solid fa-car-side"></i></div><p class="text-xl"><strong>L0</strong></p><p class="text-muted">řídím sám</p></div>
+            <div style="height:5px; border-radius:3px; background:linear-gradient(90deg,#5B6B7B,#9a8a5f);"></div>
+            <div class="text-center"><div style="font-size:38pt; color:#9a8a5f;"><i class="fa-solid fa-gauge-high"></i></div><p class="text-xl"><strong>L2–3</strong></p><p class="text-muted">asistuje</p></div>
+            <div style="height:5px; border-radius:3px; background:linear-gradient(90deg,#9a8a5f,#F5A623);"></div>
+            <div class="text-center"><div style="font-size:38pt; color:#F5A623;"><i class="fa-solid fa-road"></i></div><p class="text-xl"><strong>L5</strong></p><p class="text-muted">jede samo</p></div>
+          </div>
+          <p class="text-2xl text-center">U AI je to stejné — jen místo volantu jde o <span class="accent">tvoji práci</span>. Čím vyšší úroveň, tím víc dělá AI a tím míň ty.</p>
+        </div>
+      </section>
+
+      <section id="slide-4">
+        <h2>Pracovní cyklus — co AI postupně ukrajuje</h2>
+        <div class="content">
+          <p class="text-lg text-center text-muted" style="font-family: ui-monospace, monospace; letter-spacing: .02em;">zadání → přístup k materiálu → vykonání → ověření → použití</p>
+          <p>Na začátku dělá AI jen <strong>jeden krok</strong> — „vykonání" v podobě textu. Všechno ostatní obstaráváš ty.</p>
+          <ul class="text-lg">
+            <li>Nejdřív si AI sama <strong>sežene materiál</strong> (Gen 2)</li>
+            <li>Pak začne <strong>jednat ve světě</strong> (Gen 3)</li>
+            <li>Pak si <strong>ověří vlastní výsledek</strong> (Gen 4)</li>
+            <li>Nakonec <strong>běží i bez tebe</strong> (Gen 5)</li>
+          </ul>
+          <p class="text-xl accent" style="margin-top:auto;"><strong>To je celý ten „generační posun" — ne chytřejší model, ale kolik práce kolem sebe AI udělá sama.</strong></p>
+        </div>
+      </section>
+
+      <section id="slide-5">
+        <h2>Dvě osy, které rostou spolu</h2>
+        <div class="content">
+          <table style="width:100%;">
+            <tr><th>Osa</th><th>Od</th><th>Do</th></tr>
+            <tr><td><strong>Přístup</strong> (co AI vidí)</td><td>izolovaná bublina</td><td>dokumenty → obrazovka → soubory → systémy</td></tr>
+            <tr><td><strong>Jednání</strong> (co AI dělá)</td><td>jen mluví (text)</td><td>jedná v aplikaci → se soubory → sama na pozadí</td></tr>
+          </table>
+          <p class="text-lg" style="margin-top: 28px;">A tvoje role se posouvá <strong>opačně</strong>:</p>
+          <p style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+            <span class="badge b-1">tazatel</span> <span class="text-muted">→</span>
+            <span class="badge b-2">dohlížitel</span> <span class="text-muted">→</span>
+            <span class="badge b-3">zadavatel</span> <span class="text-muted">→</span>
+            <span class="badge b-4">architekt</span>
+          </p>
+        </div>
+      </section>
+
+      <section id="slide-6">
+        <h2>Gen 1 — Chat v prohlížeči</h2>
+        <div class="content">
+          <p class="text-xl"><strong>AI jako poradce.</strong></p>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 36px;">
+            <div>
+              <p>Napíšeš dotaz, dostaneš text. AI sedí v izolované bublině — nevidí nic z tvého světa. Co potřebuje, dodáš ručně; co vyplodí, ručně použiješ.</p>
+              <p class="text-muted">ChatGPT, Claude, Gemini (web).</p>
+            </div>
+            <div>
+              <p><i class="fa-solid fa-circle-check accent"></i> <strong>Co získáváš</strong><br>vysvětlit, navrhnout, sepsat, shrnout, brainstorm</p>
+              <p><i class="fa-solid fa-triangle-exclamation accent"></i> <strong>Kde naráží</strong><br>nevidí tvá data ani web, krátká paměť, může si vymýšlet</p>
+            </div>
+          </div>
+          <p style="margin-top:auto;">Tvoje role: <span class="badge b-1">tazatel</span> &nbsp;<span class="text-muted">AI radí, já dělám.</span></p>
+        </div>
+      </section>
+
+      <section id="slide-7">
+        <h2>Gen 2 — Chat s nástroji a kontextem</h2>
+        <div class="content">
+          <p class="text-xl"><strong>AI jako poučený poradce.</strong></p>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 36px;">
+            <div>
+              <p>Pořád chat, ale AI dosáhne ven z bubliny: web, nahrané soubory, paměť, projekty, napojení na tvé systémy (konektory / MCP).</p>
+              <p class="text-muted">Tady je dnes většina firemní praxe.</p>
+            </div>
+            <div>
+              <p><i class="fa-solid fa-circle-check accent"></i> <strong>Co získáváš</strong><br>odpovědi ukotvené v <strong>tvých</strong> datech a v <strong>aktuálních</strong> faktech; méně ručního krmení</p>
+              <p><i class="fa-solid fa-triangle-exclamation accent"></i> <strong>Kde naráží</strong><br>pořád ty orchestruješ — výstup používáš ručně</p>
+            </div>
+          </div>
+          <p style="margin-top:auto;">Tvoje role: <span class="badge b-1">tazatel s přístupem</span></p>
+        </div>
+      </section>
+
+      <section id="slide-8">
+        <h2>Gen 3 — Computer use</h2>
+        <div class="content">
+          <p class="text-xl"><strong>AI jako operátor.</strong></p>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 36px;">
+            <div>
+              <p>AI dostane virtuální myš a klávesnici a ovládá počítač <strong>jako člověk</strong> — dívá se, klikne, vyplní. Poprvé nejen mluví, ale <strong>jedná ve světě</strong>.</p>
+              <p class="text-muted">OpenAI Operator, Claude computer use.</p>
+            </div>
+            <div>
+              <p><i class="fa-solid fa-circle-check accent"></i> <strong>Co získáváš</strong><br>úkol v běžné aplikaci za tebe (i tam, kde není žádné rozhraní)</p>
+              <p><i class="fa-solid fa-triangle-exclamation accent"></i> <strong>Kde naráží</strong><br>pomalé, křehké, drahé, vyžaduje dohled — dnes spíš demo</p>
+            </div>
+          </div>
+          <p style="margin-top:auto;">Tvoje role: <span class="badge b-2">dohlížitel</span> &nbsp;<span class="text-muted">AI dělá, já hlídám.</span></p>
+        </div>
+      </section>
+
+      <section id="slide-9">
+        <h2>Gen 4 — CLI a agentní nástroje</h2>
+        <div class="content">
+          <p class="text-xl"><strong>AI jako samostatný pracovník.</strong></p>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 36px;">
+            <div>
+              <p>AI dostane přístup k souborům a příkazové řádce. Nečte obrazovku — pracuje přímo s daty. Spustí, přečte výsledek, opraví se, <strong>běží ve smyčce sama</strong>.</p>
+              <p class="text-muted">Claude Code, Codex (Blok 3).</p>
+            </div>
+            <div>
+              <p><i class="fa-solid fa-circle-check accent"></i> <strong>Co získáváš</strong><br>reálnou ověřenou práci, ne radu — úkoly o velikosti hodin; „asistent" → „pracovník"</p>
+              <p><i class="fa-solid fa-triangle-exclamation accent"></i> <strong>Kde naráží</strong><br>vyžaduje technické prostředí a důvěru k přístupu</p>
+            </div>
+          </div>
+          <p style="margin-top:auto;">Tvoje role: <span class="badge b-3">zadavatel</span> &nbsp;<span class="text-muted">AI udělá úkol, já zreviduji.</span></p>
+        </div>
+      </section>
+
+      <section id="slide-10">
+        <h2>Gen 5 — Autonomní a vícenásobní agenti</h2>
+        <div class="content">
+          <p class="text-xl"><strong>AI jako tým, co běží sám.</strong></p>
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 36px;">
+            <div>
+              <p>Agenti běží na pozadí, spouští se podle plánu, řídí pod-agenty, pracují i když u toho nejsi.</p>
+              <p class="text-muted">Kam to směřuje — dnes okraj praxe, za rok-dva běžné.</p>
+            </div>
+            <div>
+              <p><i class="fa-solid fa-circle-check accent"></i> <strong>Co získáváš</strong><br>práce se děje bez tvé přítomnosti; „dělám" → „řídím" → „navrhuju systém"</p>
+              <p><i class="fa-solid fa-triangle-exclamation accent"></i> <strong>Kde naráží</strong><br>nejvyšší nároky na zadání, kontrolu a <strong>bezpečnost</strong></p>
+            </div>
+          </div>
+          <p style="margin-top:auto;">Tvoje role: <span class="badge b-4">architekt</span></p>
+        </div>
+      </section>
+
+      <section id="divider-2" class="section-divider" data-state="is-section-divider">
+        <h2 class="text-3xl">Vedle žebříku: AI zabudovaná do produktů</h2>
+        <p class="text-xl" style="max-width: 26em;">Není to úroveň, kterou používáš ručně — je to způsob, jak AI <span class="accent">mizí do nástrojů, které už znáš</span>: kopilot v Office, návrh odpovědi v mailu, chytré pole ve vašem systému.</p>
+        <p class="text-muted">V praxi se s AI nejčastěji nepotkáš ve „velkém chatu", ale jako s tichou funkcí uvnitř softwaru.</p>
+      </section>
+
+      <section id="slide-12">
+        <h2>Častý omyl: efektnější ≠ mocnější</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 10px;">
+            <div class="card warn">
+              <p class="text-xl" style="color:#E07A5F; margin-top:0;"><strong>Computer use (Gen 3)</strong></p>
+              <p>Napodobuje člověka → kliká, čeká, dívá se.</p>
+              <p class="text-muted">Proto je pomalá a křehká.</p>
+            </div>
+            <div class="card good">
+              <p class="text-xl accent" style="margin-top:0;"><strong>CLI (Gen 4)</strong></p>
+              <p>Mluví přímo se strojem → řekne rovnou, co udělat.</p>
+              <p class="text-muted">Proto je rychlejší a zvládne víc.</p>
+            </div>
+          </div>
+          <p class="text-xl text-center" style="margin-top: 28px;">Posuzuj podle toho, <strong>co to skutečně zvládne</strong> — ne podle toho, jak efektně to vypadá.</p>
+        </div>
+      </section>
+
+      <section id="slide-13">
+        <h2>Tahák — celý žebřík na jednom místě</h2>
+        <div class="content">
+          <table style="width:100%;">
+            <tr><th>Gen.</th><th>Úroveň</th><th>AI vidí</th><th>AI dělá</th><th>Tvoje role</th></tr>
+            <tr><td>0</td><td>Bez AI</td><td>—</td><td>—</td><td>děláš všechno</td></tr>
+            <tr><td>1</td><td>Chat v prohlížeči</td><td>nic z tvého světa</td><td>mluví (text)</td><td>tazatel</td></tr>
+            <tr><td>2</td><td>Chat + nástroje</td><td>dokumenty, web</td><td>mluví ukotveně</td><td>tazatel s přístupem</td></tr>
+            <tr><td>3</td><td>Computer use</td><td>tvou obrazovku</td><td>jedná v aplikaci</td><td>dohlížitel</td></tr>
+            <tr><td>4</td><td>CLI / agentní</td><td>soubory, příkazy</td><td>jedná a ověřuje se</td><td>zadavatel</td></tr>
+            <tr><td>5</td><td>Autonomní agenti</td><td>tvé systémy</td><td>jedná sám na pozadí</td><td>architekt</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <section id="divider-3" class="section-divider" data-state="is-section-divider">
+        <h2 class="text-3xl">Kde jste vy a kde začít</h2>
+        <p class="text-xl" style="max-width: 26em;">Většina lidí dnes žije v <span class="accent">Generaci 1–2</span> — a je to úplně v pořádku. Generaci 4 (Codex) si vyzkoušíme v <strong>Bloku 3</strong>.</p>
+        <div class="note" style="max-width: 26em;">
+          <p class="text-lg"><strong>Pravidlo:</strong> nezačínej u nejvyšší úrovně. Začni tam, kde ti AI dnes ušetří nejvíc. Žebřík je mapa, ne seznam ke zdolání.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 1280,
+      height: 720,
+      margin: 0,
+      controls: true,
+      progress: true,
+      slideNumber: false,
+      hash: true,
+      transition: 'slide',
+      center: false,
+      plugins: [ RevealChart ],
+      chart: {
+        defaults: Object.assign({
+          color: 'rgba(0, 0, 0, 0.8)',
+          borderColor: 'rgba(0, 0, 0, 0.8)',
+          devicePixelRatio: 2
+        }, window.location.search.includes('export') ? { animation: false } : {})
+      }
+    });
+  </script>
+</body>
+</html>
