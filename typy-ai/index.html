@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Různé typy AI — kde se s AI potkáte</title>
+
+  <!-- Reveal.js core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Chart.js for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section id="title" class="section-divider" data-state="is-section-divider">
+        <h1>Různé typy AI</h1>
+        <p>Kde se s AI potkáte a k čemu vám je</p>
+        <p class="text-muted">Blok 1 · AI školení Inelsev Energie · 2. 6. 2026</p>
+      </section>
+
+      <section id="intro">
+        <h2>AI není jen ChatGPT</h2>
+        <div class="content">
+          <ul class="text-lg">
+            <li>Když se řekne „AI", většina lidí si představí <strong>jedno okno s chatem</strong>.</li>
+            <li>Jenže chat je jen špička. AI dnes umí <span class="accent">slyšet, mluvit, tvořit, hledat, jednat za vás</span> i poradit jako odborník.</li>
+            <li>Každá z těch věcí má vlastní nástroje. Tenhle blok je <strong>mapa</strong> — ne návod na jeden nástroj, ale přehled, co všechno existuje a k čemu to je.</li>
+          </ul>
+          <div class="note text-lg" style="margin-top: 18px;">
+            <p><strong>Cíl bloku:</strong> až někde uslyšíte „tohle umí AI", budete vědět, do které rodiny to patří — a jestli se to hodí i vám.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="mapa">
+        <h2>Šest rodin AI</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 10px;">
+            <div class="card"><p><i class="fa-solid fa-microphone accent"></i> <strong>1 · Hlas a řeč</strong></p><p class="text-muted">slyší a mluví</p></div>
+            <div class="card"><p><i class="fa-solid fa-wand-magic-sparkles accent"></i> <strong>2 · Tvorba</strong></p><p class="text-muted">text, obraz, video, prezentace</p></div>
+            <div class="card"><p><i class="fa-solid fa-brain accent"></i> <strong>3 · Znalosti a paměť</strong></p><p class="text-muted">ví, hledá, pamatuje si</p></div>
+            <div class="card"><p><i class="fa-solid fa-robot accent"></i> <strong>4 · Agenti</strong></p><p class="text-muted">jednají, ovládají, staví</p></div>
+            <div class="card"><p><i class="fa-solid fa-user-tie accent"></i> <strong>5 · AI v roli člověka</strong></p><p class="text-muted">odborník, podpora, společník</p></div>
+            <div class="card"><p><i class="fa-solid fa-gears accent"></i> <strong>6 · AI v technice</strong></p><p class="text-muted">CAD, energetika</p></div>
+          </div>
+          <p class="text-muted text-center" style="margin-top: 22px;"><i class="fa-solid fa-arrow-right"></i> další rodina &nbsp;·&nbsp; <i class="fa-solid fa-arrow-down"></i> detail a ukázky uvnitř rodiny</p>
+        </div>
+      </section>
+
+      <section id="divider-1" class="section-divider" data-state="is-section-divider">
+        <h1>1 · Hlas a řeč</h1>
+        <p>AI slyší a mluví — k nerozeznání od člověka</p>
+      </section>
+
+      <section>
+        <section id="hlas-hub">
+          <h2>Hlas a řeč</h2>
+          <div class="content">
+            <p class="text-xl"><strong>AI rozumí mluvenému slovu a umí mluvit zpět.</strong> Konec ručního zapisování.</p>
+            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 14px;">
+              <div class="card"><p><strong>Plaud</strong></p><p class="text-muted">nahraje a přepíše schůzku</p></div>
+              <div class="card"><p><strong>WhisperFlow</strong></p><p class="text-muted">diktuješ, ono píše</p></div>
+              <div class="card"><p><strong>ElevenLabs</strong></p><p class="text-muted">umělý lidský hlas</p></div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><strong>K čemu vám to je:</strong> zápis z porady bez psaní, diktování protokolu rovnou z terénu, hlasové linky.</p></div>
+          </div>
+        </section>
+        <section id="hlas-plaud">
+          <h2>Plaud — zápisy ze schůzek</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>Záznamník (klipsa nebo appka v mobilu), který nahraje schůzku a AI z ní udělá <strong>přepis, shrnutí a seznam úkolů</strong>.</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>Porady a jednání se zákazníkem</li><li>Místo ručních zápisů</li><li>Dohledání „kdo co slíbil"</li></ul>
+              </div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><i class="fa-solid fa-play accent"></i> <strong>Ukázka:</strong> sem v 2. iteraci embed demo / video.</p></div>
+          </div>
+        </section>
+        <section id="hlas-whisperflow">
+          <h2>WhisperFlow — diktování</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>Mluvíš a ono <strong>píše do jakékoli aplikace</strong> — e-mail, Word, poznámky. Zhruba 3–4× rychleji než psaní.</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>E-maily a poznámky bez klávesnice</li><li>Protokoly z terénu rovnou do mobilu</li><li>Lidi, kterým psaní nejde</li></ul>
+              </div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><i class="fa-solid fa-play accent"></i> <strong>Ukázka:</strong> sem v 2. iteraci embed demo / video.</p></div>
+          </div>
+        </section>
+        <section id="hlas-elevenlabs">
+          <h2>ElevenLabs — umělý hlas</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>Z napsaného textu udělá <strong>přirozený lidský hlas</strong> (umí i naklonovat konkrétní hlas).</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>Dabing školicích a marketingových videí</li><li>Audio verze dokumentů</li><li>Hlasové telefonní linky</li></ul>
+              </div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><i class="fa-solid fa-play accent"></i> <strong>Ukázka:</strong> sem v 2. iteraci embed demo / video.</p></div>
+          </div>
+        </section>
+      </section>
+
+      <section id="divider-2" class="section-divider" data-state="is-section-divider">
+        <h1>2 · Tvorba</h1>
+        <p>Popíšeš, co chceš — AI ti to vyrobí</p>
+      </section>
+
+      <section>
+        <section id="tvorba-hub">
+          <h2>Tvorba</h2>
+          <div class="content">
+            <p class="text-xl"><strong>Z popisu hotový výstup:</strong> text, obrázek, video, prezentace.</p>
+            <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 14px;">
+              <div class="card"><p><strong>Gamma</strong></p><p class="text-muted">prezentace</p></div>
+              <div class="card"><p><strong>AI grafika</strong></p><p class="text-muted">obraz z popisu</p></div>
+              <div class="card"><p><strong>AI video</strong></p><p class="text-muted">video a avataři</p></div>
+              <div class="card"><p><strong>Poppy.ai</strong></p><p class="text-muted">vizuální plátno</p></div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><strong>K čemu vám to je:</strong> školicí materiály, marketing a dokumentace — bez grafika a střihače.</p></div>
+          </div>
+        </section>
+        <section id="tvorba-gamma">
+          <h2>Gamma — prezentace na pár kliknutí</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>Napíšeš téma nebo odrážky → AI vytvoří <strong>hotovou prezentaci</strong> včetně rozvržení a obrázků, za minuty.</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>Rychlé decky a nabídky</li><li>Interní školení</li><li>Když nemáš čas na PowerPoint</li></ul>
+              </div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><i class="fa-solid fa-play accent"></i> <strong>Ukázka:</strong> sem v 2. iteraci embed demo / video.</p></div>
+          </div>
+        </section>
+        <section id="tvorba-grafika">
+          <h2>AI grafika — obraz z popisu</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>Napíšeš, co chceš vidět → dostaneš <strong>obrázek, vizuál nebo logo</strong>. (Midjourney, DALL·E, Nano Banana.)</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>Ilustrace a vizualizace</li><li>Marketing a sociální sítě</li><li>Návrhy a koncepty</li></ul>
+              </div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><i class="fa-solid fa-play accent"></i> <strong>Ukázka:</strong> sem v 2. iteraci embed demo / video.</p></div>
+          </div>
+        </section>
+        <section id="tvorba-video">
+          <h2>AI video — z textu rovnou film</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>Z textu nebo obrázku <strong>video</strong>, nebo <strong>mluvící avatar</strong>, který odříká scénář. (Sora, Runway, HeyGen.)</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>Školicí a marketingová videa</li><li>Avatar místo natáčení</li><li>Vizualizace postupů</li></ul>
+              </div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><i class="fa-solid fa-play accent"></i> <strong>Ukázka:</strong> sem v 2. iteraci embed reálné video.</p></div>
+          </div>
+        </section>
+        <section id="tvorba-poppy">
+          <h2>Poppy.ai — vizuální AI plátno</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>Nekonečné plátno, kam natáhneš <strong>videa, PDF, obrázky</strong> a tvoříš i bádáš nad nimi přes víc AI modelů najednou (ChatGPT + Claude).</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>Nelineární tvorba obsahu</li><li>Rozbor a porovnání videí/dokumentů</li><li>Brainstorming v týmu</li></ul>
+              </div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><i class="fa-solid fa-play accent"></i> <strong>Ukázka:</strong> Milanovy „pavučiny" — sem v 2. iteraci embed demo.</p></div>
+          </div>
+        </section>
+      </section>
+
+      <section id="divider-3" class="section-divider" data-state="is-section-divider">
+        <h1>3 · Znalosti a paměť</h1>
+        <p>AI, která se vyzná ve tvých dokumentech a pamatuje si</p>
+      </section>
+
+      <section>
+        <section id="znalosti-hub">
+          <h2>Znalosti a paměť</h2>
+          <div class="content">
+            <p class="text-xl"><strong>AI se vyzná ve tvých zdrojích i na webu</strong> — a pamatuje si kontext napříč časem.</p>
+            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 14px;">
+              <div class="card"><p><strong>NotebookLM</strong></p><p class="text-muted">research z tvých dokumentů</p></div>
+              <div class="card"><p><strong>Perplexity</strong></p><p class="text-muted">vyhledávání s odpovědí</p></div>
+              <div class="card"><p><strong>Supermemory</strong></p><p class="text-muted">druhý mozek</p></div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><strong>K čemu vám to je:</strong> nastudovat normy a manuály, ověřená rešerše, firemní know-how na jednom místě.</p></div>
+          </div>
+        </section>
+        <section id="znalosti-notebooklm">
+          <h2>NotebookLM — research z tvých zdrojů</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>Nahraješ dokumenty → ptáš se a dostaneš <strong>odpovědi se zdroji</strong>. Umí z nich vyrobit i „podcast" — audio shrnutí.</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>Prostudovat smlouvy, normy, manuály</li><li>Shrnutí dlouhých dokumentů</li><li>Odpovědi výhradně z tvých podkladů</li></ul>
+              </div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><i class="fa-solid fa-play accent"></i> <strong>Ukázka:</strong> sem v 2. iteraci embed demo / video.</p></div>
+          </div>
+        </section>
+        <section id="znalosti-perplexity">
+          <h2>Perplexity — vyhledávání, co rovnou odpoví</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>Jako Google, ale místo seznamu odkazů <strong>rovnou odpoví</strong> a uvede zdroje, ze kterých čerpal.</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>Rychlá rešerše</li><li>Ověřená a aktuální fakta</li><li>Porovnání produktů a řešení</li></ul>
+              </div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><i class="fa-solid fa-play accent"></i> <strong>Ukázka:</strong> sem v 2. iteraci embed demo / video.</p></div>
+          </div>
+        </section>
+        <section id="znalosti-supermemory">
+          <h2>Supermemory — druhý mozek</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>Paměťový systém: AI si <strong>pamatuje tvoje fakta napříč konverzacemi a roky</strong> a vrací je v pravý kontext.</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>Firemní know-how, co neodejde s člověkem</li><li>Osobní znalostní báze</li><li>AI, která tě „zná"</li></ul>
+              </div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><i class="fa-solid fa-play accent"></i> <strong>Ukázka:</strong> sem v 2. iteraci embed demo / video.</p></div>
+          </div>
+        </section>
+      </section>
+
+      <section id="divider-4" class="section-divider" data-state="is-section-divider">
+        <h1>4 · Agenti</h1>
+        <p>AI, která nejen mluví — sama jedná</p>
+      </section>
+
+      <section>
+        <section id="agenti-hub">
+          <h2>Agenti</h2>
+          <div class="content">
+            <p class="text-xl"><strong>Agent nejen poradí — sám klikne, vyplní, projde web nebo postaví aplikaci.</strong></p>
+            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 14px;">
+              <div class="card"><p><strong>Ovládá web a počítač</strong></p><p class="text-muted">Atlas · Webwright · Hermes</p></div>
+              <div class="card"><p><strong>Staví software</strong></p><p class="text-muted">vibecoding · Cursor · Space agent</p></div>
+              <div class="card good"><p><strong>→ Blok 3: Codex</strong></p><p class="text-muted">vyzkoušíte naživo</p></div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><strong>Pozor:</strong> čím víc agent dělá sám, tím důležitější jsou jasné hranice, co smí (téma bezpečnosti).</p></div>
+          </div>
+        </section>
+        <section id="agenti-web">
+          <h2>AI, která ovládá počítač a web</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>AI dostane myš a klávesnici a <strong>klika a vyplňuje za tebe</strong>. ChatGPT Atlas (AI prohlížeč), Webwright/Playwright (řízené kódem), Hermes/OpenClaw (autonomní).</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>Automatizace opakovaného klikání</li><li>Vyplňování formulářů a portálů</li><li>Sběr dat z webu</li></ul>
+              </div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><i class="fa-solid fa-play accent"></i> <strong>Ukázka:</strong> sem v 2. iteraci embed demo / video.</p></div>
+          </div>
+        </section>
+        <section id="agenti-vibecoding">
+          <h2>Vibecoding — appka popsaná slovy</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>Popíšeš slovy, co chceš → <strong>vznikne aplikace</strong>. „Na míru, na jedno použití." (Cursor, BMAD, Space agent.)</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>Interní nástroj za odpoledne</li><li>Bez najímání programátora</li><li>Rychlý prototyp nápadu</li></ul>
+              </div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><i class="fa-solid fa-play accent"></i> <strong>Ukázka:</strong> sem v 2. iteraci embed demo / video.</p></div>
+          </div>
+        </section>
+        <section id="agenti-codex">
+          <h2>Codex — most do Bloku 3</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>Desktopová agentní AI, která dělá <strong>reálnou práci s tvými soubory</strong> — ne jen radí, ale vykoná a ověří.</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>Práce s dokumenty přímo na PC</li><li>Vlastní AI asistent na míru</li><li>Tohle si vyzkoušíte naživo v Bloku 3</li></ul>
+              </div>
+            </div>
+            <div class="note good" style="margin-top:16px;"><p><i class="fa-solid fa-arrow-right accent"></i> <strong>Navazuje:</strong> Blok 3 — Desktopové AI aplikace (Codex).</p></div>
+          </div>
+        </section>
+      </section>
+
+      <section id="divider-5" class="section-divider" data-state="is-section-divider">
+        <h1>5 · AI v roli člověka</h1>
+        <p>Odborník, podpora i společník</p>
+      </section>
+
+      <section>
+        <section id="role-hub">
+          <h2>AI v roli člověka</h2>
+          <div class="content">
+            <p class="text-xl"><strong>AI vystupuje v roli:</strong> poradí jako odborník, obslouží jako podpora, doprovodí jako společník.</p>
+            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 14px;">
+              <div class="card"><p><strong>AI odborník</strong></p><p class="text-muted">doktor, právník, grafik…</p></div>
+              <div class="card"><p><strong>Support boti</strong></p><p class="text-muted">zákaznická linka 24/7</p></div>
+              <div class="card warn"><p><strong>Společník &amp; terapie</strong></p><p class="text-muted">vztah a duševní podpora</p></div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><strong>K čemu vám to je:</strong> první konzultace a triage, interní helpdesk, podpora kdykoli.</p></div>
+          </div>
+        </section>
+        <section id="role-odbornik">
+          <h2>AI odborník na zavolání</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>AI v roli profese: <strong>doktor, veterinář, právník, daňař, grafik</strong>. Vysvětlí, navrhne, připraví podklady.</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>První konzultace, než jdeš za profíkem</li><li>Příprava otázek a podkladů</li><li>Rozbor smlouvy nebo příznaků</li></ul>
+              </div>
+            </div>
+            <div class="card warn" style="margin-top:16px;"><p><i class="fa-solid fa-triangle-exclamation"></i> <strong>Pozor:</strong> je to první vrstva, ne náhrada za skutečného lékaře či právníka.</p></div>
+          </div>
+        </section>
+        <section id="role-support">
+          <h2>Chatboti a support boti</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>AI linka, která <strong>odpovídá z firemních dokumentů</strong> — zákazníkům i zaměstnancům, 24/7.</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>Zákaznická podpora a FAQ</li><li>Interní helpdesk</li><li>První linka před člověkem</li></ul>
+              </div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><i class="fa-solid fa-play accent"></i> <strong>Ukázka:</strong> sem v 2. iteraci embed demo / video.</p></div>
+          </div>
+        </section>
+        <section id="role-spolecnik">
+          <h2>Virtuální společníci a terapie</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>AI pro rozhovor, podporu a duševní pohodu — <strong>companion appky a terapeutické boty</strong>, které jsou tu kdykoli.</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>Někdo na popovídání kdykoli</li><li>Nácvik těžkých rozhovorů</li><li>Podpora mezi sezeními</li></ul>
+              </div>
+            </div>
+            <div class="card warn" style="margin-top:16px;"><p><i class="fa-solid fa-triangle-exclamation"></i> <strong>Rizika:</strong> závislost, soukromí, falešný pocit vztahu — a není to lékař.</p></div>
+          </div>
+        </section>
+      </section>
+
+      <section id="divider-6" class="section-divider" data-state="is-section-divider">
+        <h1>6 · AI v technice</h1>
+        <p>Zabudovaná přímo do inženýrských a oborových nástrojů</p>
+      </section>
+
+      <section>
+        <section id="technika-hub">
+          <h2>AI v technice a energetice</h2>
+          <div class="content">
+            <p class="text-xl"><strong>AI mizí dovnitř oborových nástrojů</strong> — tam, kde reálně pracujete.</p>
+            <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 14px;">
+              <div class="card"><p><strong>CAD a AI</strong></p><p class="text-muted">návrh a výkresy</p></div>
+              <div class="card"><p><strong>AI v energetice</strong></p><p class="text-muted">provoz a údržba sítí</p></div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><strong>K čemu vám to je:</strong> tahle rodina míří přímo do vašeho oboru.</p></div>
+          </div>
+        </section>
+        <section id="technika-cad">
+          <h2>CAD a AI</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>AI asistent uvnitř CAD: <strong>generativní návrh, automatizace výkresů</strong>, varianty řešení na zadání.</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>Rychlejší projektování</li><li>Více variant návrhu naráz</li><li>Méně rutiny ve výkresech</li></ul>
+              </div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><i class="fa-solid fa-play accent"></i> <strong>Ukázka:</strong> sem v 2. iteraci embed demo / video.</p></div>
+          </div>
+        </section>
+        <section id="technika-energetika">
+          <h2>AI v energetice</h2>
+          <div class="content">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 26px;">
+              <div>
+                <p class="text-muted text-uppercase">Co to je</p>
+                <p>AI v provozu sítí: <strong>prediktivní údržba, optimalizace, detekce poruch a ztrát</strong>, předpověď spotřeby.</p>
+              </div>
+              <div>
+                <p class="text-muted text-uppercase">K čemu</p>
+                <ul><li>Předvídat poruchy dřív, než nastanou</li><li>Snížit ztráty v síti</li><li>Plánovat údržbu chytře</li></ul>
+              </div>
+            </div>
+            <div class="note" style="margin-top:16px;"><p><i class="fa-solid fa-play accent"></i> <strong>Ukázka:</strong> sem v 2. iteraci embed demo / video.</p></div>
+          </div>
+        </section>
+      </section>
+
+      <section id="zaver">
+        <h2>Tahák & kde začít</h2>
+        <div class="content">
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+            <p><span class="accent">1</span> Hlas a řeč</p>
+            <p><span class="accent">2</span> Tvorba</p>
+            <p><span class="accent">3</span> Znalosti a paměť</p>
+            <p><span class="accent">4</span> Agenti</p>
+            <p><span class="accent">5</span> AI v roli člověka</p>
+            <p><span class="accent">6</span> AI v technice</p>
+          </div>
+          <div class="note text-lg" style="margin-top:18px;">
+            <p><strong>Pravidlo na závěr:</strong> nezačínej u toho nejefektnějšího, ale u toho, co ti <span class="accent">dnes ušetří nejvíc času</span>. Zbytek mapy je směr, ne povinnost.</p>
+          </div>
+          <p class="text-muted" style="margin-top:14px;">Pokračujeme: <strong>Blok 2</strong> — webové AI aplikace · <strong>Blok 3</strong> — Codex na vlastním notebooku.</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 1280,
+      height: 720,
+      margin: 0,
+      controls: true,
+      progress: true,
+      slideNumber: false,
+      hash: true,
+      transition: 'slide',
+      center: false,
+      plugins: [ RevealChart ],
+      chart: {
+        defaults: Object.assign({
+          color: 'rgba(0, 0, 0, 0.8)',
+          borderColor: 'rgba(0, 0, 0, 0.8)',
+          devicePixelRatio: 2
+        }, window.location.search.includes('export') ? { animation: false } : {})
+      }
+    });
+
+    // Diagramy: NEspouští se runtime mermaid. Napiš diagram do <pre class="mermaid">…</pre>
+    // a po vygenerování decku spusť build-time render (statické inline SVG):
+    //   node 0_AI_Skills/diagramy/render.js <deck.html>
+    // Výsledek je čistý SVG (žádný foreignObject) → renderuje i na zpočátku skrytém slidu.
+  </script>
+</body>
+</html>
