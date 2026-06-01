@@ -149,6 +149,53 @@
       color: var(--muted);
     }
 
+    /* Resources — doplňkové odkazy a nástroje */
+    .resources {
+      margin-top: 64px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .res-head {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .res-head:not(:first-child) { margin-top: 40px; }
+    .res-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .res-card {
+      display: block;
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .18s ease, background .18s ease;
+    }
+    .res-card:hover { border-color: var(--amber); background: #FFFCF6; }
+    .res-title {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+    .res-host {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-left: 6px;
+    }
+    .res-desc { font-size: 13px; color: var(--muted); line-height: 1.45; }
+
     /* Footer */
     footer {
       margin-top: 72px;
@@ -262,6 +309,32 @@
         </div>
       </section>
     </main>
+
+    <section class="resources">
+      <h2 class="res-head">Užitečné odkazy</h2>
+      <div class="res-grid">
+        <a class="res-card" href="https://www.umeligence.cz/" target="_blank" rel="noopener">
+          <span class="res-title">Uměligence<span class="res-host">web</span></span>
+          <span class="res-desc">Český vzdělávací portál o AI — kurzy, články a podcast.</span>
+        </a>
+        <a class="res-card" href="https://asociace.ai/eu-ai-act/" target="_blank" rel="noopener">
+          <span class="res-title">EU AI Act — průvodce<span class="res-host">web</span></span>
+          <span class="res-desc">Srozumitelný průvodce evropskou regulací AI od České asociace AI.</span>
+        </a>
+      </div>
+
+      <h2 class="res-head">Nástroje</h2>
+      <div class="res-grid">
+        <a class="res-card" href="https://chatgpt.com/cs-CZ/codex/" target="_blank" rel="noopener">
+          <span class="res-title">ChatGPT Codex<span class="res-host">web</span></span>
+          <span class="res-desc">Desktopový AI agent od OpenAI — nástroj k Bloku 3.</span>
+        </a>
+        <a class="res-card" href="https://github.com/marktext/marktext#download-and-installation" target="_blank" rel="noopener">
+          <span class="res-title">MarkText<span class="res-host">GitHub</span></span>
+          <span class="res-desc">Otevřený editor Markdown — ke stažení zdarma.</span>
+        </a>
+      </div>
+    </section>
 
     <footer>
       © 2026 Martin Sakala / Bits2b ·
