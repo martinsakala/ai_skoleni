@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompting — jak ze stejné AI dostat víc</title>
+
+  <!-- Reveal.js core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Chart.js for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section id="title" class="section-divider" data-state="is-section-divider">
+        <p class="text-uppercase" style="font-size: 14pt; letter-spacing: 0.15em; color: #9FB2C4;">Inelsev Energie · AI školení · Blok 2</p>
+        <h1>Prompting</h1>
+        <p class="text-2xl" style="color: #F4F7FA;">Jak ze <span class="accent">stejné</span> AI dostat víc</p>
+        <p class="text-muted">Webové AI rozhraní · stačí prohlížeč</p>
+      </section>
+
+      <section id="slide-2">
+        <h2>Stejný nástroj, jiný výsledek</h2>
+        <div class="content">
+          <p class="text-xl">Dva lidé otevřou tutéž AI, zadají tentýž typ úkolu — a každý dostane jinou kvalitu.</p>
+          <div class="note" style="margin-top: 20px;">
+            <p class="text-2xl"><strong>Rozdíl není v AI. Je v zadání.</strong></p>
+          </div>
+          <p class="text-lg" style="margin-top: 24px;">Tahle část je o tom, jak zadání postavit — a že promptovat můžeš i <span class="navy"><strong>obrázkem, fotkou nebo dokumentem</strong></span>, nejen textem.</p>
+        </div>
+      </section>
+
+      <section id="divider-1" class="section-divider" data-state="is-section-divider">
+        <p class="text-uppercase accent" style="font-size: 16pt; letter-spacing: 0.15em;">Část 1</p>
+        <h1>Kostra dotazu</h1>
+        <p>Čtyři kameny, na kterých stojí použitelný dotaz</p>
+      </section>
+
+      <section id="slide-4">
+        <h2>Čtyři kameny dobrého dotazu</h2>
+        <div class="content">
+          <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--secondary-color);">
+                <th style="padding: 10px 8px; width: 18%;">Kámen</th>
+                <th style="padding: 10px 8px; width: 42%;">Na co odpovídá</th>
+                <th style="padding: 10px 8px; width: 40%;">Příklad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid #D5DCE3;">
+                <td style="padding: 12px 8px;"><strong class="navy">Úkol</strong></td>
+                <td style="padding: 12px 8px;">Co má AI udělat?</td>
+                <td style="padding: 12px 8px;"><em>napiš, shrň, porovnej, zkontroluj</em></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #D5DCE3;">
+                <td style="padding: 12px 8px;"><strong class="navy">Kontext</strong></td>
+                <td style="padding: 12px 8px;">Pro koho, k čemu, kdo jsem já?</td>
+                <td style="padding: 12px 8px;"><em>jsem projektant, jde o rozvaděč NN…</em></td>
+              </tr>
+              <tr style="border-bottom: 1px solid #D5DCE3;">
+                <td style="padding: 12px 8px;"><strong class="navy">Vstup</strong></td>
+                <td style="padding: 12px 8px;">Z čeho má vyjít?</td>
+                <td style="padding: 12px 8px;"><em>vložený text, foto, dokument, čísla</em></td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 8px;"><strong class="navy">Formát</strong></td>
+                <td style="padding: 12px 8px;">Jak to chci zpět?</td>
+                <td style="padding: 12px 8px;"><em>tabulka / 10 vět / formální tón</em></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="text-lg" style="margin-top: 20px;"><i class="fa-solid fa-lightbulb accent"></i> &nbsp;Kontext je důležitější než délka. Tři přesné věty &gt; dlouhý vágní dotaz.</p>
+        </div>
+      </section>
+
+      <section id="slide-5">
+        <h2>Vidět ten rozdíl</h2>
+        <div class="content">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div class="card warn">
+              <p><i class="fa-solid fa-xmark" style="color:#E07A5F;"></i> &nbsp;<strong>Bez kostry</strong></p>
+              <div class="prompt" style="border-left-color:#E07A5F;">
+                <p>napiš technickou zprávu k rozvaděči</p>
+              </div>
+              <p class="text-muted" style="margin-top:10px;">Nemá z čeho vyjít → obecná vata, kterou stejně přepíšeš.</p>
+            </div>
+            <div class="card good">
+              <p><i class="fa-solid fa-check accent"></i> &nbsp;<strong>S kostrou</strong></p>
+              <div class="prompt">
+                <p><span class="who">úkol + kontext + vstup + formát</span>Napiš textovou část technické zprávy. Jsem projektant, rozvaděč NN pro čerpací stanici, zákazník Lovochemie, půjde do PD ke schválení. Parametry níže [vložíš]. 3 odstavce, terminologie dle ČSN, bez frází.</p>
+              </div>
+              <p class="text-muted" style="margin-top:10px;">Výstup je rovnou blízko použitelnému — opravuješ detaily.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="divider-2" class="section-divider" data-state="is-section-divider">
+        <p class="text-uppercase accent" style="font-size: 16pt; letter-spacing: 0.15em;">Část 2</p>
+        <h1>Techniky a přístupy</h1>
+        <p>Nářadí — poznáš, kdy které vytáhnout</p>
+      </section>
+
+      <section id="slide-7">
+        <h2>Deset technik — přehled</h2>
+        <div class="content">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px;">
+            <div class="tech"><h3><span class="num">1</span>Dej AI roli</h3><p>„jsi zkušený revizní technik…"</p></div>
+            <div class="tech"><h3><span class="num">2</span>Ukaž vzor (few-shot)</h3><p>přilož jeden hotový příklad</p></div>
+            <div class="tech"><h3><span class="num">3</span>Krok za krokem</h3><p>rozepiš postup, ne skok k závěru</p></div>
+            <div class="tech"><h3><span class="num">4</span>Rozděl velký úkol</h3><p>nejdřív osnova, pak části</p></div>
+            <div class="tech"><h3><span class="num">5</span>Nech ji zeptat se zpět</h3><p>ať si řekne o chybějící kontext</p></div>
+            <div class="tech"><h3><span class="num">6</span>Žádej varianty</h3><p>3 verze → vybíráš, neopravuješ</p></div>
+            <div class="tech"><h3><span class="num">7</span>Sebekontrola</h3><p>„najdi slabiny a oprav je"</p></div>
+            <div class="tech"><h3><span class="num">8</span>Negativní instrukce</h3><p>řekni i co nechceš</p></div>
+            <div class="tech"><h3><span class="num">9</span>Zadej formát a délku</h3><p>tabulka / max 5 vět / tón</p></div>
+            <div class="tech"><h3><span class="num">10</span>Iteruj</h3><p>první odpověď = návrh, ne verdikt</p></div>
+          </div>
+          <p class="text-muted text-center" style="margin-top:14px;">Dají se <strong>kombinovat</strong> — role + vzor + sebekontrola v jednom dotazu je běžné.</p>
+        </div>
+      </section>
+
+      <section id="slide-8">
+        <h2>Dej AI roli &nbsp;·&nbsp; Ukaž vzor</h2>
+        <div class="content">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div>
+              <h3 class="navy"><span class="accent">1 ·</span> Dej AI roli</h3>
+              <p class="text-muted">Posune slovník i úhel pohledu.</p>
+              <div class="prompt"><p>Jsi zkušený revizní technik. Projdi tenhle popis instalace a upozorni na to, co by ti při revizi vadilo.</p></div>
+            </div>
+            <div>
+              <h3 class="navy"><span class="accent">2 ·</span> Ukaž vzor (few-shot)</h3>
+              <p class="text-muted">Trefí styl napoprvé — silné na typové zprávy.</p>
+              <div class="prompt"><p>Tady je vzor naší typové zprávy [vložíš]. Napiš podle stejné struktury novou pro tuhle zakázku: [zadání].</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="slide-9">
+        <h2>Krok za krokem &nbsp;·&nbsp; Rozděl úkol</h2>
+        <div class="content">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div>
+              <h3 class="navy"><span class="accent">3 ·</span> Krok za krokem</h3>
+              <p class="text-muted">Méně chyb u úvah a výpočtů.</p>
+              <div class="prompt"><p>Spočítej zkratové poměry. Postupuj krok za krokem, ukaž mezivýpočty a vztahy, ať to zkontroluju.</p></div>
+            </div>
+            <div>
+              <h3 class="navy"><span class="accent">4 ·</span> Rozděl velký úkol</h3>
+              <p class="text-muted">Veď AI po částech, udržíš kvalitu.</p>
+              <div class="prompt"><p>Nejdřív navrhni jen osnovu provozního manuálu. Až ji odsouhlasím, píšeme kapitolu po kapitole.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="slide-10">
+        <h2>Nech ji zeptat se &nbsp;·&nbsp; Žádej varianty</h2>
+        <div class="content">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div>
+              <h3 class="navy"><span class="accent">5 ·</span> Nech ji zeptat se zpět</h3>
+              <p class="text-muted">Vytáhne z tebe i to, co bys zapomněl.</p>
+              <div class="prompt"><p>Než začneš psát nabídku, zeptej se mě na všechno, co potřebuješ vědět, abys ji napsal dobře.</p></div>
+            </div>
+            <div>
+              <h3 class="navy"><span class="accent">6 ·</span> Žádej varianty</h3>
+              <p class="text-muted">Vybíráš místo opravování od nuly.</p>
+              <div class="prompt"><p>Dej 3 verze úvodu nabídky: strohou technickou, vstřícnou k zákazníkovi, velmi stručnou.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="slide-11">
+        <h2>Sebekontrola &nbsp;·&nbsp; Negativní instrukce</h2>
+        <div class="content">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div>
+              <h3 class="navy"><span class="accent">7 ·</span> Nech AI zkontrolovat svůj výstup</h3>
+              <p class="text-muted">Druhý průchod zdarma.</p>
+              <div class="prompt"><p>Tohle jsi napsal. Teď to projdi jako přísný oponent: najdi nejasná místa a chybějící údaje. Pak to oprav.</p></div>
+            </div>
+            <div>
+              <h3 class="navy"><span class="accent">8 ·</span> Negativní instrukce</h3>
+              <p class="text-muted">Řekni i to, co nechceš.</p>
+              <div class="prompt"><p>…bez marketingových frází, bez vykání, nevymýšlej parametry, které jsem ti nedal.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="slide-12">
+        <h2>Zadej formát &nbsp;·&nbsp; Iteruj</h2>
+        <div class="content">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div>
+              <h3 class="navy"><span class="accent">9 ·</span> Zadej formát a délku</h3>
+              <p class="text-muted">Ušetří celé kolo iterace.</p>
+              <div class="prompt"><p>Výstup jako tabulka: Parametr | Hodnota | Poznámka. Max 15 řádků. Žádný úvodní text.</p></div>
+            </div>
+            <div>
+              <h3 class="navy"><span class="accent">10 ·</span> Iteruj</h3>
+              <p class="text-muted">První odpověď je návrh, ne verdikt.</p>
+              <div class="prompt"><p>zkrať to na polovinu  ·  formálněji  ·  doplň bod o uzemnění  ·  přepiš 3. odstavec srozumitelněji</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="divider-3" class="section-divider" data-state="is-section-divider">
+        <p class="text-uppercase accent" style="font-size: 16pt; letter-spacing: 0.15em;">Část 3</p>
+        <h1>Multimodální prompting</h1>
+        <p>Prompt není jen text — je i obrázek, foto, dokument a hlas</p>
+      </section>
+
+      <section id="slide-14">
+        <h2>Prompt není jen text</h2>
+        <div class="content">
+          <p class="text-xl">Do dotazu můžeš přiložit, co máš před očima — nebo prostě mluvit:</p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 30px; margin-top: 16px;">
+            <p><i class="fa-solid fa-camera accent"></i> &nbsp;<strong>Foto</strong> štítku, schématu, poruchy</p>
+            <p><i class="fa-solid fa-desktop accent"></i> &nbsp;<strong>Screenshot</strong> obrazovky</p>
+            <p><i class="fa-solid fa-file-lines accent"></i> &nbsp;<strong>Dokument</strong> (PDF, Word, tabulka)</p>
+            <p><i class="fa-solid fa-microphone accent"></i> &nbsp;<strong>Hlas</strong> — diktování místo psaní</p>
+            <p><i class="fa-solid fa-image accent"></i> &nbsp;<strong>Generování</strong> obrázku / schématu</p>
+            <p><i class="fa-solid fa-layer-group accent"></i> &nbsp;<strong>Kombinace</strong> foto + text</p>
+          </div>
+          <div class="note" style="margin-top: 20px;">
+            <p class="text-xl"><strong>Pro člověka v terénu je fotka často lepší prompt než odstavec textu.</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="slide-15">
+        <h2><i class="fa-solid fa-camera accent"></i> &nbsp;Foto → otázka</h2>
+        <div class="content">
+          <p class="text-lg text-muted">Klíčové pro montéry a techniky — vyfoť realitu a zeptej se na ni.</p>
+          <div class="mm" style="margin-top: 16px;">
+            <div class="ic"><i class="fa-solid fa-tag"></i></div>
+            <div><p><strong>Štítek zařízení</strong></p><div class="prompt"><p>Vypiš z toho štítku všechny parametry a vysvětli, co znamená IP54 a ta hodnota zkratové odolnosti.</p></div></div>
+          </div>
+          <div class="mm">
+            <div class="ic"><i class="fa-solid fa-diagram-project"></i></div>
+            <div><p><strong>Schéma / výkres</strong></p><div class="prompt"><p>Vysvětli mi tohle zapojení — co dělá tenhle blok a kde je jištění.</p></div></div>
+          </div>
+          <div class="mm">
+            <div class="ic"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div><p><strong>Porucha / chybové hlášení</strong></p><div class="prompt"><p>Tohle hlásí měnič. Co to znamená a co mám zkusit jako první?</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="slide-16">
+        <h2>Screenshot &nbsp;·&nbsp; Foto dokumentu</h2>
+        <div class="content">
+          <div class="mm" style="margin-top: 8px;">
+            <div class="ic"><i class="fa-solid fa-desktop"></i></div>
+            <div><p><strong>Screenshot obrazovky</strong></p><div class="prompt"><p>Tady je screenshot chyby v softwaru — co je špatně a jak to opravit?</p></div></div>
+          </div>
+          <div class="mm">
+            <div class="ic"><i class="fa-solid fa-file-image"></i></div>
+            <div><p><strong>Foto papíru / staré normy / ručního zápisu</strong></p><div class="prompt"><p>Přepiš tuhle naskenovanou tabulku do přehledného seznamu.</p>
+<p>Z téhle fotky stránky normy vytáhni jen požadavky na uzemnění.</p></div></div>
+          </div>
+          <p class="text-lg" style="margin-top: 14px;"><i class="fa-solid fa-lightbulb accent"></i> &nbsp;AI papír přečte a rovnou zpracuje — nemusíš nic přepisovat ručně.</p>
+        </div>
+      </section>
+
+      <section id="slide-17">
+        <h2>Dokument jako příloha &nbsp;·&nbsp; Hlas</h2>
+        <div class="content">
+          <div class="mm" style="margin-top: 8px;">
+            <div class="ic"><i class="fa-solid fa-file-pdf"></i></div>
+            <div><p><strong>PDF, Word, tabulka</strong></p><div class="prompt"><p>Shrň tuhle 40stránkovou zadávací dokumentaci na jednu stránku a vypíchni termíny a sankce.</p>
+<p>Porovnej tyhle dvě nabídky — kde se liší v ceně a rozsahu?</p></div></div>
+          </div>
+          <div class="mm">
+            <div class="ic"><i class="fa-solid fa-microphone"></i></div>
+            <div><p><strong>Hlasový vstup / diktování</strong></p>
+            <p class="text-muted">Mluv místo psaní — praktické v terénu, v autě, s plnýma rukama.</p>
+            <div class="prompt"><p>[nadiktuješ poznámky z obhlídky] → udělej z toho strukturovaný zápis.</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="slide-18">
+        <h2>Kombinace — foto + text</h2>
+        <div class="content">
+          <p class="text-lg">Nejsilnější je vstupy propojit do jednoho dotazu:</p>
+          <div class="prompt" style="margin-top: 16px;">
+            <p><span class="who">foto + zadání v jednom</span>Tady je foto rozvaděče [obrázek] a níže parametry zakázky [text]. Napiš mi k tomu revizní poznámku a upozorni, co na fotce nesedí s běžnou praxí.</p>
+          </div>
+          <div class="note" style="margin-top: 24px;">
+            <p class="text-2xl"><strong>Než začneš složitě popisovat slovy něco, co máš před očima — vyfoť to.</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="slide-19">
+        <h2>Co si odnést</h2>
+        <div class="content">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px 30px;">
+            <div class="card good"><p><strong class="navy">Kostra</strong><br>úkol + kontext + vstup + formát</p></div>
+            <div class="card good"><p><strong class="navy">Kontext &gt; délka</strong><br>tři přesné věty &gt; dlouhý vágní dotaz</p></div>
+            <div class="card good"><p><strong class="navy">Není jeden správný prompt</strong><br>techniky se kombinují podle úkolu</p></div>
+            <div class="card good"><p><strong class="navy">První odpověď = návrh</strong><br>iteruj, nečekej dokonalost</p></div>
+            <div class="card good"><p><strong class="navy">Promptuj i obrázkem</strong><br>foto bývá lepší než odstavec</p></div>
+            <div class="card warn"><p><strong class="navy">Vždy ověř výstup</strong><br>a hlídej, co nahráváš (NDA, data)</p></div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 1280,
+      height: 720,
+      margin: 0,
+      controls: true,
+      progress: true,
+      slideNumber: false,
+      hash: true,
+      transition: 'slide',
+      center: false,
+      plugins: [ RevealChart ],
+      chart: {
+        defaults: Object.assign({
+          color: 'rgba(0, 0, 0, 0.8)',
+          borderColor: 'rgba(0, 0, 0, 0.8)',
+          devicePixelRatio: 2
+        }, window.location.search.includes('export') ? { animation: false } : {})
+      }
+    });
+  </script>
+</body>
+</html>
