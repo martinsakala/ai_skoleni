@@ -381,3 +381,15 @@
 .risk-high { background: rgba(224, 122, 95, 0.16); border-left: 6px solid #E07A5F; }
 .risk-limited { background: rgba(245, 166, 35, 0.16); border-left: 6px solid #F5A623; }
 .risk-minimal { background: rgba(46, 139, 87, 0.14); border-left: 6px solid #2E8B57; }
+
+/* Semafor — yellow (conditional) + orange (soft-red) cards */
+.accent-amber { color: #B8770A; }
+.card.amber { border-color: #F5A623; background: rgba(245, 166, 35, 0.07); }
+.card.orange { border-color: #E07A5F; background: rgba(224, 122, 95, 0.07); }
+
+/* Traffic-light dot in headings */
+.dot { font-size: 0.8em; }
+
+/* Compact checklist for detail (vertical) slides */
+.reveal .slides section .checklist li { margin-bottom: 14px; }
+.reveal .slides section .checklist li strong { color: var(--primary-color); }
