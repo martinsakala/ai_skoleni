@@ -28,6 +28,35 @@
     }
     .wrap { max-width: 880px; margin: 0 auto; padding: 80px 24px 96px; }
 
+    /* URL banner — pro opsání z plátna */
+    .url-banner {
+      background: var(--navy);
+      border-radius: 14px;
+      padding: 26px 28px;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+    .url-hint {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 10px;
+    }
+    .url-big {
+      display: inline-block;
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: clamp(22px, 4.6vw, 40px);
+      font-weight: 700;
+      color: var(--amber);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      word-break: break-all;
+    }
+    .url-big:hover { text-decoration: underline; }
+
     /* Header */
     header { margin-bottom: 64px; }
     .eyebrow {
@@ -215,6 +244,11 @@
 </head>
 <body>
   <div class="wrap">
+    <div class="url-banner">
+      <span class="url-hint">Zadej si do prohlížeče</span>
+      <a class="url-big" href="https://martinsakala.github.io/ai_skoleni/">martinsakala.github.io/ai_skoleni</a>
+    </div>
+
     <header>
       <span class="eyebrow">Inelsev Energie · Školení</span>
       <h1>Práce s AI</h1>
